@@ -1,6 +1,6 @@
 from django.db import models
 
-class Period:
+class Period(models.Model):
 
   name = models.CharField(max_length = 50)
   begin_date = models.DateField()
