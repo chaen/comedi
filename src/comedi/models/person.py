@@ -1,5 +1,6 @@
 from django.db import models
-from comedi.models.city import City
+
+from city import City
 
 class Client(models.Model):
 
@@ -18,5 +19,16 @@ class Client(models.Model):
     return "%s %s"%(self.first_name, self.last_name)
   
     
+  class Meta:
+    app_label = 'comedi'
+
+
+class Seller( models.Model ):
+  name = models.CharField( max_length = 50 )
+
+  def __unicode__( self ):
+    return "%s" % ( self.name )
+
+
   class Meta:
     app_label = 'comedi'
