@@ -1,0 +1,1472 @@
+[
+{
+  "pk": 1, 
+  "model": "comedi.city", 
+  "fields": {
+    "code": 57600, 
+    "name": "Morsbach"
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.city", 
+  "fields": {
+    "code": 57600, 
+    "name": "Forbach"
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.client", 
+  "fields": {
+    "comment": "", 
+    "cellphone": "", 
+    "first_name": "Toto", 
+    "last_name": "Toto", 
+    "star": 2, 
+    "city": 1, 
+    "phone": "0102030405", 
+    "address": "1 avenue des bouteilles d'eaux", 
+    "nickname": "", 
+    "email": ""
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.client", 
+  "fields": {
+    "comment": "", 
+    "cellphone": "", 
+    "first_name": "Tata", 
+    "last_name": "Tata", 
+    "star": 5, 
+    "city": 2, 
+    "phone": "0504030201", 
+    "address": "14 rue de la source", 
+    "nickname": "", 
+    "email": ""
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.seller", 
+  "fields": {
+    "name": "Vendeuse1"
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.seller", 
+  "fields": {
+    "name": "Vendeuse2"
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.period", 
+  "fields": {
+    "comment": "", 
+    "archived": false, 
+    "begin_date": "2014-04-01", 
+    "name": "Period1", 
+    "end_date": "2014-04-30", 
+    "prefix": "p1_"
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.period", 
+  "fields": {
+    "comment": "", 
+    "archived": false, 
+    "begin_date": "2014-12-01", 
+    "name": "Noel14", 
+    "end_date": "2014-12-31", 
+    "prefix": "noel14_"
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.family", 
+  "fields": {
+    "name": "Famille1"
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.family", 
+  "fields": {
+    "name": "Famille2"
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.subfamily", 
+  "fields": {
+    "name": "SousFamille1", 
+    "family": 1
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.subfamily", 
+  "fields": {
+    "name": "SousFamille2", 
+    "family": 1
+  }
+},
+{
+  "pk": 3, 
+  "model": "comedi.subfamily", 
+  "fields": {
+    "name": "SousFamille3", 
+    "family": 2
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.tva", 
+  "fields": {
+    "rate": 20.0, 
+    "name": "TVA1"
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.tva", 
+  "fields": {
+    "rate": 10.0, 
+    "name": "TVA2"
+  }
+},
+{
+  "pk": 3, 
+  "model": "comedi.tva", 
+  "fields": {
+    "rate": 5.0, 
+    "name": "TVA3"
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.unit", 
+  "fields": {
+    "name": "Unit1"
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.unit", 
+  "fields": {
+    "name": "Unit2"
+  }
+},
+{
+  "pk": 3, 
+  "model": "comedi.unit", 
+  "fields": {
+    "name": "Unit3"
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.product", 
+  "fields": {
+    "code": 1, 
+    "locked": false, 
+    "name": "Produit1", 
+    "price": 10.0, 
+    "sell_unit": 2, 
+    "ttc": true, 
+    "prod_unit": 1, 
+    "subFamily": 1, 
+    "tva": 1
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.product", 
+  "fields": {
+    "code": 2, 
+    "locked": true, 
+    "name": "Produit2", 
+    "price": 1.0, 
+    "sell_unit": 1, 
+    "ttc": false, 
+    "prod_unit": 2, 
+    "subFamily": 2, 
+    "tva": 2
+  }
+},
+{
+  "pk": 3, 
+  "model": "comedi.product", 
+  "fields": {
+    "code": 3, 
+    "locked": false, 
+    "name": "Produit3", 
+    "price": 7.0, 
+    "sell_unit": 1, 
+    "ttc": true, 
+    "prod_unit": 1, 
+    "subFamily": 3, 
+    "tva": 1
+  }
+},
+{
+  "pk": 4, 
+  "model": "comedi.product", 
+  "fields": {
+    "code": 4, 
+    "locked": false, 
+    "name": "Produit4", 
+    "price": 9.0, 
+    "sell_unit": 3, 
+    "ttc": true, 
+    "prod_unit": 3, 
+    "subFamily": 3, 
+    "tva": 2
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.unitconversion", 
+  "fields": {
+    "end_unit": 2, 
+    "rate": 2.0, 
+    "start_unit": 1, 
+    "product": 1
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.unitconversion", 
+  "fields": {
+    "end_unit": 1, 
+    "rate": 5.0, 
+    "start_unit": 2, 
+    "product": 2
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.order", 
+  "fields": {
+    "comment": "", 
+    "code": "A1", 
+    "period": 1, 
+    "seller": 1, 
+    "client": 1, 
+    "deposit": null, 
+    "modified": false, 
+    "order_date": "2014-04-06", 
+    "prepared": false, 
+    "pickup_date": "2014-04-06", 
+    "valid": true
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.order", 
+  "fields": {
+    "comment": "", 
+    "code": "A2", 
+    "period": 2, 
+    "seller": 2, 
+    "client": 2, 
+    "deposit": null, 
+    "modified": false, 
+    "order_date": "2014-04-06", 
+    "prepared": false, 
+    "pickup_date": "2014-04-06", 
+    "valid": true
+  }
+},
+{
+  "pk": 1, 
+  "model": "comedi.orderitem", 
+  "fields": {
+    "product": 1, 
+    "extraComment": "", 
+    "usualComment": null, 
+    "order": 1, 
+    "unit": 1, 
+    "quantity": 1.0
+  }
+},
+{
+  "pk": 2, 
+  "model": "comedi.orderitem", 
+  "fields": {
+    "product": 2, 
+    "extraComment": "", 
+    "usualComment": null, 
+    "order": 1, 
+    "unit": 1, 
+    "quantity": 3.0
+  }
+},
+{
+  "pk": 3, 
+  "model": "comedi.orderitem", 
+  "fields": {
+    "product": 4, 
+    "extraComment": "", 
+    "usualComment": null, 
+    "order": 2, 
+    "unit": 1, 
+    "quantity": 1.0
+  }
+},
+{
+  "pk": 1, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "config", 
+    "name": "config", 
+    "app_label": "constance"
+  }
+},
+{
+  "pk": 2, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "city", 
+    "name": "city", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 3, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "client", 
+    "name": "client", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 4, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "seller", 
+    "name": "seller", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 5, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "period", 
+    "name": "period", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 6, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "family", 
+    "name": "family", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 7, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "subfamily", 
+    "name": "sub family", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 8, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "tva", 
+    "name": "tva", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 9, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "unit", 
+    "name": "unit", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 10, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "product", 
+    "name": "product", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 11, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "unitconversion", 
+    "name": "unit conversion", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 12, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "depositmode", 
+    "name": "deposit mode", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 13, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "usualcomment", 
+    "name": "usual comment", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 14, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "order", 
+    "name": "order", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 15, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "orderitem", 
+    "name": "order item", 
+    "app_label": "comedi"
+  }
+},
+{
+  "pk": 16, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "logentry", 
+    "name": "log entry", 
+    "app_label": "admin"
+  }
+},
+{
+  "pk": 17, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "permission", 
+    "name": "permission", 
+    "app_label": "auth"
+  }
+},
+{
+  "pk": 18, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "group", 
+    "name": "group", 
+    "app_label": "auth"
+  }
+},
+{
+  "pk": 19, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "user", 
+    "name": "user", 
+    "app_label": "auth"
+  }
+},
+{
+  "pk": 20, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "contenttype", 
+    "name": "content type", 
+    "app_label": "contenttypes"
+  }
+},
+{
+  "pk": 21, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "session", 
+    "name": "session", 
+    "app_label": "sessions"
+  }
+},
+{
+  "pk": 22, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "constance", 
+    "name": "constance", 
+    "app_label": "database"
+  }
+},
+{
+  "pk": "gkzb970d5ezcl651ak3xpdg9xpsca9lj", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2014-04-20T20:03:43.000Z", 
+    "session_data": "YTRjOTdiZmY1ODhiNDY4OWFkYmZlMWI4YmRjNTUzYzBmYTc5NmQ1YTp7Il9tZXNzYWdlcyI6IltbXCJfX2pzb25fbWVzc2FnZVwiLDAsMjUsXCJUaGUgY2l0eSBcXFwiTW9yc2JhY2ggKDU3NjAwKVxcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS4gWW91IG1heSBlZGl0IGl0IGFnYWluIGJlbG93LlwiXSxbXCJfX2pzb25fbWVzc2FnZVwiLDAsMjUsXCJUaGUgY2l0eSBcXFwiTW9yc2JhY2ggKDU3NjAwKVxcXCIgd2FzIGNoYW5nZWQgc3VjY2Vzc2Z1bGx5LiBZb3UgbWF5IGFkZCBhbm90aGVyIGNpdHkgYmVsb3cuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBjaXR5IFxcXCJGb3JiYWNoICg1NzYwMClcXFwiIHdhcyBhZGRlZCBzdWNjZXNzZnVsbHkuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBjbGllbnQgXFxcIlRvdG8gVG90b1xcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS4gWW91IG1heSBhZGQgYW5vdGhlciBjbGllbnQgYmVsb3cuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBjbGllbnQgXFxcIlRhdGEgVGF0YVxcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS5cIl0sW1wiX19qc29uX21lc3NhZ2VcIiwwLDI1LFwiVGhlIGZhbWlseSBcXFwiRmFtaWxsZTFcXFwiIHdhcyBhZGRlZCBzdWNjZXNzZnVsbHkuIFlvdSBtYXkgYWRkIGFub3RoZXIgZmFtaWx5IGJlbG93LlwiXSxbXCJfX2pzb25fbWVzc2FnZVwiLDAsMjUsXCJUaGUgZmFtaWx5IFxcXCJGYW1pbGxlMlxcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS5cIl0sW1wiX19qc29uX21lc3NhZ2VcIiwwLDI1LFwiVGhlIHN1YiBmYW1pbHkgXFxcIlNvdXNGYW1pbGxlMVxcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS4gWW91IG1heSBhZGQgYW5vdGhlciBzdWIgZmFtaWx5IGJlbG93LlwiXSxbXCJfX2pzb25fbWVzc2FnZVwiLDAsMjUsXCJUaGUgc3ViIGZhbWlseSBcXFwiU291c0ZhbWlsbGUyXFxcIiB3YXMgYWRkZWQgc3VjY2Vzc2Z1bGx5LiBZb3UgbWF5IGFkZCBhbm90aGVyIHN1YiBmYW1pbHkgYmVsb3cuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBzdWIgZmFtaWx5IFxcXCJTb3VzRmFtaWxsZTNcXFwiIHdhcyBhZGRlZCBzdWNjZXNzZnVsbHkuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBwZXJpb2QgXFxcIlBlcmlvZDEgKDIwMTQtMDQtMDEgLSAyMDE0LTA0LTMwKVxcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS4gWW91IG1heSBhZGQgYW5vdGhlciBwZXJpb2QgYmVsb3cuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBwZXJpb2QgXFxcIk5vZWwxNCAoMjAxNC0xMi0wMSAtIDIwMTQtMTItMzEpXFxcIiB3YXMgYWRkZWQgc3VjY2Vzc2Z1bGx5LlwiXSxbXCJfX2pzb25fbWVzc2FnZVwiLDAsMjUsXCJUaGUgcHJvZHVjdCBcXFwiUHJvZHVpdDFcXFwiIHdhcyBhZGRlZCBzdWNjZXNzZnVsbHkuIFlvdSBtYXkgYWRkIGFub3RoZXIgcHJvZHVjdCBiZWxvdy5cIl0sW1wiX19qc29uX21lc3NhZ2VcIiwwLDI1LFwiVGhlIHByb2R1Y3QgXFxcIlByb2R1aXQyXFxcIiB3YXMgYWRkZWQgc3VjY2Vzc2Z1bGx5LiBZb3UgbWF5IGFkZCBhbm90aGVyIHByb2R1Y3QgYmVsb3cuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBwcm9kdWN0IFxcXCJQcm9kdWl0M1xcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS4gWW91IG1heSBhZGQgYW5vdGhlciBwcm9kdWN0IGJlbG93LlwiXSxbXCJfX2pzb25fbWVzc2FnZVwiLDAsMjUsXCJUaGUgcHJvZHVjdCBcXFwiUHJvZHVpdDRcXFwiIHdhcyBhZGRlZCBzdWNjZXNzZnVsbHkuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBzZWxsZXIgXFxcIlZlbmRldXNlMVxcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS4gWW91IG1heSBhZGQgYW5vdGhlciBzZWxsZXIgYmVsb3cuXCJdLFtcIl9fanNvbl9tZXNzYWdlXCIsMCwyNSxcIlRoZSBzZWxsZXIgXFxcIlZlbmRldXNlMlxcXCIgd2FzIGFkZGVkIHN1Y2Nlc3NmdWxseS5cIl0sW1wiX19qc29uX21lc3NhZ2VcIiwwLDI1LFwiVGhlIG9yZGVyIFxcXCJPcmRlciBvYmplY3RcXFwiIHdhcyBhZGRlZCBzdWNjZXNzZnVsbHkuIFlvdSBtYXkgZWRpdCBpdCBhZ2FpbiBiZWxvdy5cIl0sW1wiX19qc29uX21lc3NhZ2VcIiwwLDI1LFwiVGhlIG9yZGVyIFxcXCJBMiAoVGF0YSBUYXRhIC0gMjAxNC0wNC0wNilcXFwiIHdhcyBhZGRlZCBzdWNjZXNzZnVsbHkuIFlvdSBtYXkgZWRpdCBpdCBhZ2FpbiBiZWxvdy5cIl0sW1wiX19qc29uX21lc3NhZ2VcIiwwLDI1LFwiVGhlIG9yZGVyIFxcXCJBMiAoVGF0YSBUYXRhIC0gMjAxNC0wNC0wNilcXFwiIHdhcyBjaGFuZ2VkIHN1Y2Nlc3NmdWxseS5cIl1dIiwiX2F1dGhfdXNlcl9pZCI6MSwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQifQ=="
+  }
+},
+{
+  "pk": 1, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_config", 
+    "name": "Can change config", 
+    "content_type": 1
+  }
+},
+{
+  "pk": 2, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_city", 
+    "name": "Can add city", 
+    "content_type": 2
+  }
+},
+{
+  "pk": 3, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_city", 
+    "name": "Can change city", 
+    "content_type": 2
+  }
+},
+{
+  "pk": 4, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_city", 
+    "name": "Can delete city", 
+    "content_type": 2
+  }
+},
+{
+  "pk": 5, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_client", 
+    "name": "Can add client", 
+    "content_type": 3
+  }
+},
+{
+  "pk": 6, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_client", 
+    "name": "Can change client", 
+    "content_type": 3
+  }
+},
+{
+  "pk": 7, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_client", 
+    "name": "Can delete client", 
+    "content_type": 3
+  }
+},
+{
+  "pk": 8, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_seller", 
+    "name": "Can add seller", 
+    "content_type": 4
+  }
+},
+{
+  "pk": 9, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_seller", 
+    "name": "Can change seller", 
+    "content_type": 4
+  }
+},
+{
+  "pk": 10, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_seller", 
+    "name": "Can delete seller", 
+    "content_type": 4
+  }
+},
+{
+  "pk": 11, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_period", 
+    "name": "Can add period", 
+    "content_type": 5
+  }
+},
+{
+  "pk": 12, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_period", 
+    "name": "Can change period", 
+    "content_type": 5
+  }
+},
+{
+  "pk": 13, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_period", 
+    "name": "Can delete period", 
+    "content_type": 5
+  }
+},
+{
+  "pk": 14, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_family", 
+    "name": "Can add family", 
+    "content_type": 6
+  }
+},
+{
+  "pk": 15, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_family", 
+    "name": "Can change family", 
+    "content_type": 6
+  }
+},
+{
+  "pk": 16, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_family", 
+    "name": "Can delete family", 
+    "content_type": 6
+  }
+},
+{
+  "pk": 17, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_subfamily", 
+    "name": "Can add sub family", 
+    "content_type": 7
+  }
+},
+{
+  "pk": 18, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_subfamily", 
+    "name": "Can change sub family", 
+    "content_type": 7
+  }
+},
+{
+  "pk": 19, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_subfamily", 
+    "name": "Can delete sub family", 
+    "content_type": 7
+  }
+},
+{
+  "pk": 20, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_tva", 
+    "name": "Can add tva", 
+    "content_type": 8
+  }
+},
+{
+  "pk": 21, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_tva", 
+    "name": "Can change tva", 
+    "content_type": 8
+  }
+},
+{
+  "pk": 22, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_tva", 
+    "name": "Can delete tva", 
+    "content_type": 8
+  }
+},
+{
+  "pk": 23, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_unit", 
+    "name": "Can add unit", 
+    "content_type": 9
+  }
+},
+{
+  "pk": 24, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_unit", 
+    "name": "Can change unit", 
+    "content_type": 9
+  }
+},
+{
+  "pk": 25, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_unit", 
+    "name": "Can delete unit", 
+    "content_type": 9
+  }
+},
+{
+  "pk": 26, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_product", 
+    "name": "Can add product", 
+    "content_type": 10
+  }
+},
+{
+  "pk": 27, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_product", 
+    "name": "Can change product", 
+    "content_type": 10
+  }
+},
+{
+  "pk": 28, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_product", 
+    "name": "Can delete product", 
+    "content_type": 10
+  }
+},
+{
+  "pk": 29, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_unitconversion", 
+    "name": "Can add unit conversion", 
+    "content_type": 11
+  }
+},
+{
+  "pk": 30, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_unitconversion", 
+    "name": "Can change unit conversion", 
+    "content_type": 11
+  }
+},
+{
+  "pk": 31, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_unitconversion", 
+    "name": "Can delete unit conversion", 
+    "content_type": 11
+  }
+},
+{
+  "pk": 32, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_depositmode", 
+    "name": "Can add deposit mode", 
+    "content_type": 12
+  }
+},
+{
+  "pk": 33, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_depositmode", 
+    "name": "Can change deposit mode", 
+    "content_type": 12
+  }
+},
+{
+  "pk": 34, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_depositmode", 
+    "name": "Can delete deposit mode", 
+    "content_type": 12
+  }
+},
+{
+  "pk": 35, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_usualcomment", 
+    "name": "Can add usual comment", 
+    "content_type": 13
+  }
+},
+{
+  "pk": 36, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_usualcomment", 
+    "name": "Can change usual comment", 
+    "content_type": 13
+  }
+},
+{
+  "pk": 37, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_usualcomment", 
+    "name": "Can delete usual comment", 
+    "content_type": 13
+  }
+},
+{
+  "pk": 38, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_order", 
+    "name": "Can add order", 
+    "content_type": 14
+  }
+},
+{
+  "pk": 39, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_order", 
+    "name": "Can change order", 
+    "content_type": 14
+  }
+},
+{
+  "pk": 40, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_order", 
+    "name": "Can delete order", 
+    "content_type": 14
+  }
+},
+{
+  "pk": 41, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_orderitem", 
+    "name": "Can add order item", 
+    "content_type": 15
+  }
+},
+{
+  "pk": 42, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_orderitem", 
+    "name": "Can change order item", 
+    "content_type": 15
+  }
+},
+{
+  "pk": 43, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_orderitem", 
+    "name": "Can delete order item", 
+    "content_type": 15
+  }
+},
+{
+  "pk": 44, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_logentry", 
+    "name": "Can add log entry", 
+    "content_type": 16
+  }
+},
+{
+  "pk": 45, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_logentry", 
+    "name": "Can change log entry", 
+    "content_type": 16
+  }
+},
+{
+  "pk": 46, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_logentry", 
+    "name": "Can delete log entry", 
+    "content_type": 16
+  }
+},
+{
+  "pk": 47, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_permission", 
+    "name": "Can add permission", 
+    "content_type": 17
+  }
+},
+{
+  "pk": 48, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_permission", 
+    "name": "Can change permission", 
+    "content_type": 17
+  }
+},
+{
+  "pk": 49, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_permission", 
+    "name": "Can delete permission", 
+    "content_type": 17
+  }
+},
+{
+  "pk": 50, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_group", 
+    "name": "Can add group", 
+    "content_type": 18
+  }
+},
+{
+  "pk": 51, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_group", 
+    "name": "Can change group", 
+    "content_type": 18
+  }
+},
+{
+  "pk": 52, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_group", 
+    "name": "Can delete group", 
+    "content_type": 18
+  }
+},
+{
+  "pk": 53, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_user", 
+    "name": "Can add user", 
+    "content_type": 19
+  }
+},
+{
+  "pk": 54, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_user", 
+    "name": "Can change user", 
+    "content_type": 19
+  }
+},
+{
+  "pk": 55, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_user", 
+    "name": "Can delete user", 
+    "content_type": 19
+  }
+},
+{
+  "pk": 56, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_contenttype", 
+    "name": "Can add content type", 
+    "content_type": 20
+  }
+},
+{
+  "pk": 57, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_contenttype", 
+    "name": "Can change content type", 
+    "content_type": 20
+  }
+},
+{
+  "pk": 58, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_contenttype", 
+    "name": "Can delete content type", 
+    "content_type": 20
+  }
+},
+{
+  "pk": 59, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_session", 
+    "name": "Can add session", 
+    "content_type": 21
+  }
+},
+{
+  "pk": 60, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_session", 
+    "name": "Can change session", 
+    "content_type": 21
+  }
+},
+{
+  "pk": 61, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_session", 
+    "name": "Can delete session", 
+    "content_type": 21
+  }
+},
+{
+  "pk": 62, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_constance", 
+    "name": "Can add constance", 
+    "content_type": 22
+  }
+},
+{
+  "pk": 63, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_constance", 
+    "name": "Can change constance", 
+    "content_type": 22
+  }
+},
+{
+  "pk": 64, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_constance", 
+    "name": "Can delete constance", 
+    "content_type": 22
+  }
+},
+{
+  "pk": 1, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "admin", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": true, 
+    "is_staff": true, 
+    "last_login": "2014-04-06T19:52:24.128Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$12000$2DyHtPufFUgo$QgnkWteXgs+zslQf4xSWZPa9kFVRIpyaMVL2B4IWlC4=", 
+    "email": "admin@admin.com", 
+    "date_joined": "2014-04-06T19:52:13.772Z"
+  }
+},
+{
+  "pk": 1, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:52:49.275Z", 
+    "object_repr": "Morsbach (57600)", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 2
+  }
+},
+{
+  "pk": 2, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2014-04-06T19:52:50.713Z", 
+    "object_repr": "Morsbach (57600)", 
+    "object_id": "1", 
+    "change_message": "No fields changed.", 
+    "user": 1, 
+    "content_type": 2
+  }
+},
+{
+  "pk": 3, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:52:57.489Z", 
+    "object_repr": "Forbach (57600)", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 2
+  }
+},
+{
+  "pk": 4, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:53:26.146Z", 
+    "object_repr": "Toto Toto", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 3
+  }
+},
+{
+  "pk": 5, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:53:42.530Z", 
+    "object_repr": "Tata Tata", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 3
+  }
+},
+{
+  "pk": 6, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:53:56.872Z", 
+    "object_repr": "Famille1", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 6
+  }
+},
+{
+  "pk": 7, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:54:00.881Z", 
+    "object_repr": "Famille2", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 6
+  }
+},
+{
+  "pk": 8, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:54:17.816Z", 
+    "object_repr": "SousFamille1", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 7
+  }
+},
+{
+  "pk": 9, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:54:26.055Z", 
+    "object_repr": "SousFamille2", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 7
+  }
+},
+{
+  "pk": 10, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:54:32.368Z", 
+    "object_repr": "SousFamille3", 
+    "object_id": "3", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 7
+  }
+},
+{
+  "pk": 11, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:54:59.938Z", 
+    "object_repr": "Period1 (2014-04-01 - 2014-04-30)", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 5
+  }
+},
+{
+  "pk": 12, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:55:29.662Z", 
+    "object_repr": "Noel14 (2014-12-01 - 2014-12-31)", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 5
+  }
+},
+{
+  "pk": 13, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:56:12.156Z", 
+    "object_repr": "TVA1 (20.0 %)", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 14, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:56:21.142Z", 
+    "object_repr": "TVA2 (10.0 %)", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 15, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:56:28.813Z", 
+    "object_repr": "TVA3 (5.0 %)", 
+    "object_id": "3", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 16, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:56:41.634Z", 
+    "object_repr": "Unit1", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 17, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:56:49.230Z", 
+    "object_repr": "Unit2", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 18, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:56:54.422Z", 
+    "object_repr": "Unit3", 
+    "object_id": "3", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 19, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:57:39.451Z", 
+    "object_repr": "Produit1", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 10
+  }
+},
+{
+  "pk": 20, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:58:15.506Z", 
+    "object_repr": "Produit2", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 10
+  }
+},
+{
+  "pk": 21, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:58:55.070Z", 
+    "object_repr": "Produit3", 
+    "object_id": "3", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 10
+  }
+},
+{
+  "pk": 22, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:59:24.183Z", 
+    "object_repr": "Produit4", 
+    "object_id": "4", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 10
+  }
+},
+{
+  "pk": 23, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:59:43.145Z", 
+    "object_repr": "Vendeuse1", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 4
+  }
+},
+{
+  "pk": 24, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T19:59:47.127Z", 
+    "object_repr": "Vendeuse2", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 4
+  }
+},
+{
+  "pk": 25, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T20:01:03.477Z", 
+    "object_repr": "Order object", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 14
+  }
+},
+{
+  "pk": 26, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-04-06T20:02:44.034Z", 
+    "object_repr": "A2 (Tata Tata - 2014-04-06)", 
+    "object_id": "2", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 14
+  }
+},
+{
+  "pk": 27, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2014-04-06T20:03:42.984Z", 
+    "object_repr": "A2 (Tata Tata - 2014-04-06)", 
+    "object_id": "2", 
+    "change_message": "Added order item \"OrderItem object\".", 
+    "user": 1, 
+    "content_type": 14
+  }
+}
+]
