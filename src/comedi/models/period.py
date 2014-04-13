@@ -7,6 +7,7 @@ class Period(models.Model):
   end_date = models.DateField()
   archived = models.BooleanField(default = False)
   comment = models.TextField(max_length = 200, blank = True)
+  prefix = models.CharField( max_length = 10, blank = True )
 
   def __unicode__(self):
     return "%s (%s - %s)"%(self.name, self.begin_date, self.end_date)

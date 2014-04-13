@@ -1,5 +1,5 @@
-from comedi.models.person import Client, Seller
-from comedi.models.city import City
-from comedi.models.period import Period
-from comedi.models.product import Family, SubFamily, Tva, Product, Unit, UnitConversion
-from comedi.models.order import Order, OrderItem, UsualComment, DepositMode
+from person import Client, Seller
+from city import City
+from period import Period
+from product import Family, SubFamily, Tva, Product, Unit, UnitConversion
+from order import Order, OrderItem, UsualComment, DepositMode

@@ -54,3 +54,7 @@ docs/_build/
 
 #mac shit
 .DS_Store
+
+#eclipse shit
+
+.settings

@@ -30,13 +30,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'comedi',
+    'picklefield',
+#     'django.contrib.sites',
+#     'django_options',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
-    'comedi',
+
+
+    'constance.backends.database',
+    'constance',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -46,6 +53,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#     'django_options.middleware.OptionsLoaderMiddleware',
+
 )
 
 ROOT_URLCONF = 'comedi_project.urls'
@@ -91,3 +100,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/login/'
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+SITE_ID = 2
+
+TEMPLATE_CONTEXT_PROCESSORS = ( 
+    # ...
+    'django.contrib.auth.context_processors.auth',
+    'constance.context_processors.config',
+ )
+
+
+from datetime import datetime
+
+CONSTANCE_CONFIG = {
+    'PHONE_START': ( '', 'Prefix par defaut du telephone' ),
+    'LOCK_ORDER_ORIGIN' : ( False, "Bloquer l'origine de la commande" ),
+#     'OWNER': ( 'Mr. Henry Wensleydale', 'owner of the shop' ),
+#     'MUSICIANS': ( 4, 'number of musicians inside the shop' ),
+#     'DATE_ESTABLISHED': ( datetime( 1972, 11, 30 ), "the shop's first opening" ),
+}
