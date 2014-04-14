@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
 </head>
 <body>
@@ -16,17 +17,51 @@
 <script>
     $("#id_family").change(function() {
         var family = $(this).val();
-    $.getJSON("{% url 'list_subFamilies' %}", { family: family }, function(matching_subFamilies) {
-        alert(matching_subFamilies);
-        $("#id_subFamily").empty();
-        $.each(matching_subFamilies, function(key, value) {   
-            $('#id_subFamily')
-             .append($("<option></option>")
-             .attr("value",key)
-             .text(value)); 
+	    $.getJSON("{% url 'ajax_getSubFamilyNameFromFamily' %}", { family: family }, function(matching_subFamilies) {
+	        $("#id_subFamily").empty();
+	        $.each(matching_subFamilies, function(key, value) {   
+	            $('#id_subFamily')
+	             .append($("<option></option>")
+	             .attr("value",key)
+	             .text(value)); 
+	        });
+	    });
+    });
+</script>
+
+<script>
+    $("#id_subFamily").change(function() {
+        var subFamily = $(this).val();
+        $.getJSON("{% url 'ajax_getProductNamesFromSubFamily' %}", { subFamily: subFamily }, function(matching_products) {
+            $("#id_products").empty();
+            $.each(matching_products, function(key, value) {   
+                $('#id_products')
+                 .append($("<option></option>")
+                 .attr("value",key)
+                 .text(value)); 
+            });
         });
     });
-});
+</script>
+
+<script>
+    $("#id_products").change(function() {
+        var product = $("option:selected",this).text();
+        $('#id_product').val(product);
+    });
+</script>
+
+<script>
+	$(function() {
+	  $("#id_product").autocomplete({
+	    source: "ajax_productAutocomplete",
+	    minLength: 2,
+        selectFirst:true,
+        select:function(event,ui) {
+           $("#id_product").val(ui.item.id)
+         }    
+	  });
+	});
 </script>
 
 </body>

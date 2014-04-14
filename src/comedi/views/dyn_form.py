@@ -26,19 +26,45 @@ import json
 # });
 # </script>
 
-def list_subFamilies( request ):
+def ajax_getSubFamilyNameFromFamily( request ):
   subFamilies = dict( ( sf.id , sf.name ) for sf in SubFamily.objects.filter( family__pk = request.GET["family"] ) )
   try:
     ret = json.dumps( subFamilies )
   except Exception, e:
     print e
-  print "coucou!! %s %s %s" % ( request.GET["family"], subFamilies, ret )
   return HttpResponse( ret )
 
-class ProductForm(ModelForm):
+def ajax_getProductNamesFromSubFamily( request ):
+  products = dict( ( p.id , p.name ) for p in Product.objects.filter( subFamily__pk = request.GET["subFamily"] ) )
+  try:
+    ret = json.dumps( products )
+  except Exception, e:
+    print e
+  return HttpResponse( ret )
+
+def ajax_productAutocomplete(request):
+  q = request.GET.get('term', '')
+  products = Product.objects.filter( name__icontains = q )[:20]
+  results = []
+  for product in products:
+      product_json = {}
+      product_json['id'] = product.id
+      product_json['label'] = product.name
+      product_json['value'] = product.name
+      results.append( product_json )
+  data = json.dumps( results )
+  print "data %s " % data
+  return HttpResponse( data )
+
+
+class ProductForm( forms.Form ):
   family = forms.ModelChoiceField( queryset = Family.objects.all() )
-  class Meta:
-    model = Product
+#   subFamily = forms.ModelChoiceField( queryset = SubFamily.objects.all(),
+#                      widget = forms.Select( attrs = {'disabled':'disabled'} ) )
+  subFamily = forms.ModelChoiceField( queryset = SubFamily.objects.all() )
+  products = forms.ModelChoiceField( queryset = Product.objects.all() )
+
+  product = forms.CharField()
 
 def dyn_form( request ):
 
