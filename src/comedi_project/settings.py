@@ -121,3 +121,4 @@ CONSTANCE_CONFIG = {
 #     'MUSICIANS': ( 4, 'number of musicians inside the shop' ),
 #     'DATE_ESTABLISHED': ( datetime( 1972, 11, 30 ), "the shop's first opening" ),
 }
+

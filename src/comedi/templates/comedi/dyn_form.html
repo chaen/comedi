@@ -1,13 +1,32 @@
+{% extends "copy_admin/base_site.html" %}
+{% load static %}
 
-<!DOCTYPE html>
-<html>
-<head>
+{% block extrahead %}{{ block.super }}
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+<script type="text/javascript" src="/my_admin/jsi18n/"></script>
+<script type="text/javascript" src="{% static 'admin/js/core.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/js/admin/RelatedObjectLookups.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/js/jquery.init.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/js/actions.js' %}"></script>
+{{ form.media }} 
+{% endblock %}
 
-</head>
-<body>
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/forms.css' %} "/>
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %} "/>
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/widgets.css' %}"/>
+{% endblock %}
+
+{% load staticfiles %}
+
+
+
+{% block content %}<div id="content-main">
+
 <form action="/contact/" method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit" />
@@ -15,55 +34,48 @@
 </form>
 
 <script>
-    $("#id_family").change(function() {
-        var family = $(this).val();
-	    $.getJSON("{% url 'ajax_getSubFamilyNameFromFamily' %}", { family: family }, function(matching_subFamilies) {
-	        $("#id_subFamily").empty();
-	        $.each(matching_subFamilies, function(key, value) {   
-	            $('#id_subFamily')
-	             .append($("<option></option>")
-	             .attr("value",key)
-	             .text(value)); 
-	        });
-	    });
-    });
-</script>
-
-<script>
-    $("#id_subFamily").change(function() {
-        var subFamily = $(this).val();
-        $.getJSON("{% url 'ajax_getProductNamesFromSubFamily' %}", { subFamily: subFamily }, function(matching_products) {
-            $("#id_products").empty();
-            $.each(matching_products, function(key, value) {   
-                $('#id_products')
-                 .append($("<option></option>")
-                 .attr("value",key)
-                 .text(value)); 
-            });
+$("#id_family").change(function() {
+    var family = $(this).val();
+    $.getJSON("{% url 'comedi:ajax_getSubFamilyNameFromFamily' %}", { family: family }, function(matching_subFamilies) {
+        $("#id_subFamily").empty();
+        $.each(matching_subFamilies, function(key, value) {   
+            $('#id_subFamily')
+             .append($("<option></option>")
+             .attr("value",key)
+             .text(value)); 
         });
     });
-</script>
+});
 
-<script>
-    $("#id_products").change(function() {
-        var product = $("option:selected",this).text();
-        $('#id_product').val(product);
+$("#id_subFamily").change(function() {
+    var subFamily = $(this).val();
+    $.getJSON("{% url 'comedi:ajax_getProductNamesFromSubFamily' %}", { subFamily: subFamily }, function(matching_products) {
+        $("#id_products").empty();
+        $.each(matching_products, function(key, value) {   
+            $('#id_products')
+             .append($("<option></option>")
+             .attr("value",key)
+             .text(value)); 
+        });
     });
-</script>
+});
 
-<script>
-	$(function() {
-	  $("#id_product").autocomplete({
-	    source: "ajax_productAutocomplete",
-	    minLength: 2,
-        selectFirst:true,
-        select:function(event,ui) {
-           $("#id_product").val(ui.item.id)
-         }    
-	  });
-	});
-</script>
+$("#id_products").change(function() {
+    var product = $("option:selected",this).text();
+    $('#id_product').val(product);
+});
 
-</body>
-</html>
+$(function() {
+  $("#id_product").autocomplete({
+    source: "comedi:ajax_productAutocomplete",
+    minLength: 2,
+    selectFirst:true,
+    select:function(event,ui) {
+       $("#id_product").val(ui.item.id)
+     }    
+  });
+});
+</script>
+{% endblock %}
+</div>
 

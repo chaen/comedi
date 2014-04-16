@@ -4,7 +4,8 @@ from django.forms import ModelForm
 from django import forms
 from comedi.models import Product, Family, SubFamily
 from django.shortcuts import render_to_response
-
+import datetime
+from django.contrib.admin.widgets import AdminDateWidget
 
 import json
 
@@ -65,6 +66,8 @@ class ProductForm( forms.Form ):
   products = forms.ModelChoiceField( queryset = Product.objects.all() )
 
   product = forms.CharField()
+  startDay = forms.DateField( initial = datetime.date.today, widget = AdminDateWidget )
+  endDay = forms.DateField( initial = datetime.date.today , widget = AdminDateWidget )
 
 def dyn_form( request ):
 
