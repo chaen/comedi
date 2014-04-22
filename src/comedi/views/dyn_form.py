@@ -27,7 +27,7 @@ import json
 # });
 # </script>
 
-def ajax_getSubFamilyNameFromFamily( request ):
+def ajax_getSubFamilyNamesFromFamily( request ):
   subFamilies = dict( ( sf.id , sf.name ) for sf in SubFamily.objects.filter( family__pk = request.GET["family"] ) )
   try:
     ret = json.dumps( subFamilies )

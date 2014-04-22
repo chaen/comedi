@@ -36,7 +36,7 @@
 <script>
 $("#id_family").change(function() {
     var family = $(this).val();
-    $.getJSON("{% url 'comedi:ajax_getSubFamilyNameFromFamily' %}", { family: family }, function(matching_subFamilies) {
+    $.getJSON("{% url 'comedi:ajax_getSubFamilyNamesFromFamily' %}", { family: family }, function(matching_subFamilies) {
         $("#id_subFamily").empty();
         $.each(matching_subFamilies, function(key, value) {   
             $('#id_subFamily')
