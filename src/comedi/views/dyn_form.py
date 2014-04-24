@@ -81,6 +81,7 @@ class ProductForm( forms.Form ):
 def dyn_form( request ):
 
     form = ProductForm()  # An unbound form
+    request.session.pop( 'dyn_form', None )
 
     return render( request, 'comedi/dyn_form.html', {
         'form': form,
@@ -100,17 +101,51 @@ def dyn_form_result( request ):
 class dyn_form_result2( ListView ):
   model = Product
   template_name = "comedi/dyn_form_result2.html"
+  paginate_by = 1
+  context_object_name = "product_list"
+  form = None
 #   def get_context_data( self, **kwargs ):
 #     context = super( dyn_form_result2, self ).get_context_data( **kwargs )
 #     return context
-  def get_queryset( self ):
 
-    return Product.objects.filter( name__icontains = self.productName )
+  def get( self, request, *args, **kwargs ):
+    if self.form:
+      form = self.form
+    else:
+      form = ProductForm( request.GET )  # A form bound to the POST data
+
+    if form.is_valid():
+      productName = form.cleaned_data['product']
+#       self.request.session.setdefault( 'dyn_form', {} )['productName'] = productName
+      self.request.session.setdefault( 'dyn_form', {} )['productName'] = productName
+#       print "AND HERE %s" % self.request.session.get( 'dyn_form', {} ).get( 'productName', None )
+      self.productName = productName
+    else:
+#       self.productName = self.request.session.get( 'dyn_form', {} ).get( 'productName', None )
+      self.productName = None
+      if self.request.session:
+        self.productName = self.request.session.get( 'dyn_form', {} ).get( 'productName', None )
+
+      
+
+
+    return super( dyn_form_result2, self ).get( request, *args, **kwargs )
+
+  def get_queryset( self ):
+#     print "REQUEST %s SESSION %s" % ( self.request.GET, self.request.session )
+    print "PRODUCTNAME %s" % self.productName
+    if self.productName:
+      queryset = Product.objects.filter( name__icontains = self.productName )
+    else:
+      queryset = []
+    return queryset
+
+  def get_context_data( self, **kwargs ):
+    context = super( dyn_form_result2, self ).get_context_data( **kwargs )
+    print "CONTEXT %s" % context
+    return context
 
   def post( self, request, *args, **kwargs ):
-    form = ProductForm( request.POST )  # A form bound to the POST data
-    if form.is_valid():
-      self.productName = form.cleaned_data['product']
-    print "args %s kwargs %srequest %s" % ( args, kwargs, request )
+    self.form = ProductForm( request.POST )  # A form bound to the POST data
     return self.get( request, *args, **kwargs )
 
