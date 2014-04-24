@@ -6,6 +6,8 @@ from comedi.models import Product, Family, SubFamily
 from django.shortcuts import render_to_response
 import datetime
 from django.contrib.admin.widgets import AdminDateWidget
+from django.shortcuts import get_object_or_404, render
+from django.views.generic.list import ListView
 
 import json
 
@@ -28,7 +30,11 @@ import json
 # </script>
 
 def ajax_getSubFamilyNamesFromFamily( request ):
-  subFamilies = dict( ( sf.id , sf.name ) for sf in SubFamily.objects.filter( family__pk = request.GET["family"] ) )
+  subFamilyObjs = SubFamily.objects.filter( family__pk = request.GET["family"] ) 
+  if not subFamilyObjs:
+    subFamilyObjs = SubFamily.objects.all()
+  subFamilies = dict( ( sf.id , sf.name ) for sf in subFamilyObjs )
+#   subFamilies[-1] = "---------"
   try:
     ret = json.dumps( subFamilies )
   except Exception, e:
@@ -36,7 +42,10 @@ def ajax_getSubFamilyNamesFromFamily( request ):
   return HttpResponse( ret )
 
 def ajax_getProductNamesFromSubFamily( request ):
-  products = dict( ( p.id , p.name ) for p in Product.objects.filter( subFamily__pk = request.GET["subFamily"] ) )
+  productObjs = Product.objects.filter( subFamily__pk = request.GET["subFamily"] ) 
+  if not productObjs:
+    productObjs = Product.objects.all()
+  products = dict( ( p.id , p.name ) for p in productObjs )
   try:
     ret = json.dumps( products )
   except Exception, e:
@@ -59,11 +68,11 @@ def ajax_productAutocomplete(request):
 
 
 class ProductForm( forms.Form ):
-  family = forms.ModelChoiceField( queryset = Family.objects.all() )
+  family = forms.ModelChoiceField( queryset = Family.objects.all(), required = False )
 #   subFamily = forms.ModelChoiceField( queryset = SubFamily.objects.all(),
 #                      widget = forms.Select( attrs = {'disabled':'disabled'} ) )
-  subFamily = forms.ModelChoiceField( queryset = SubFamily.objects.all() )
-  products = forms.ModelChoiceField( queryset = Product.objects.all() )
+  subFamily = forms.ModelChoiceField( queryset = SubFamily.objects.all(), required = False )
+  products = forms.ModelChoiceField( queryset = Product.objects.all(), empty_label = "-------", required = False )
 
   product = forms.CharField()
   startDay = forms.DateField( initial = datetime.date.today, widget = AdminDateWidget )
@@ -76,4 +85,32 @@ def dyn_form( request ):
     return render( request, 'comedi/dyn_form.html', {
         'form': form,
     } )
+
+def dyn_form_result( request ):
+
+  if request.method == 'POST': # If the form has been submitted...                                                                                                                                                 
+    form = ProductForm(request.POST) # A form bound to the POST data                                                                                                                                             
+    if form.is_valid(): # All validation rules pass                                                                                                                                                              
+      product_name = form.cleaned_data['product']
+      print "Product %s"%product_name
+      product = get_object_or_404( Product, name = product_name )
+      return render( request, 'comedi/dyn_form_result.html', {'product': product} )
+
+
+class dyn_form_result2( ListView ):
+  model = Product
+  template_name = "comedi/dyn_form_result2.html"
+#   def get_context_data( self, **kwargs ):
+#     context = super( dyn_form_result2, self ).get_context_data( **kwargs )
+#     return context
+  def get_queryset( self ):
+
+    return Product.objects.filter( name__icontains = self.productName )
+
+  def post( self, request, *args, **kwargs ):
+    form = ProductForm( request.POST )  # A form bound to the POST data
+    if form.is_valid():
+      self.productName = form.cleaned_data['product']
+    print "args %s kwargs %srequest %s" % ( args, kwargs, request )
+    return self.get( request, *args, **kwargs )
 

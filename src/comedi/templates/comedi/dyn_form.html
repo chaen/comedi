@@ -27,7 +27,7 @@
 
 {% block content %}<div id="content-main">
 
-<form action="/contact/" method="post">{% csrf_token %}
+<form action="{% url 'comedi:dyn_form_result' %}" method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit" />
 
@@ -36,27 +36,51 @@
 <script>
 $("#id_family").change(function() {
     var family = $(this).val();
+    if (!family) { family = -1;}
     $.getJSON("{% url 'comedi:ajax_getSubFamilyNamesFromFamily' %}", { family: family }, function(matching_subFamilies) {
         $("#id_subFamily").empty();
-        $.each(matching_subFamilies, function(key, value) {   
-            $('#id_subFamily')
+       $('#id_subFamily')
              .append($("<option></option>")
-             .attr("value",key)
-             .text(value)); 
-        });
+             .attr("value",-1)
+             .text("---------")); 
+        len = Object.keys(matching_subFamilies).length;
+        if (!len){ 
+           //$('#id_subFamily').prop('disabled', true);
+           //$('#id_products').prop('disabled', true);
+           
+        } else {
+            //$('#id_subFamily').prop('disabled', false);
+            //$('#id_products').prop('disabled', false);
+	        $.each(matching_subFamilies, function(key, value) {   
+	            $('#id_subFamily')
+	             .append($("<option></option>")
+	             .attr("value",key)
+	             .text(value)); 
+	        });
+	    }
     });
 });
 
 $("#id_subFamily").change(function() {
     var subFamily = $(this).val();
+    if (!subFamily) { subFamily = -1;}
+    
     $.getJSON("{% url 'comedi:ajax_getProductNamesFromSubFamily' %}", { subFamily: subFamily }, function(matching_products) {
         $("#id_products").empty();
-        $.each(matching_products, function(key, value) {   
-            $('#id_products')
-             .append($("<option></option>")
-             .attr("value",key)
-             .text(value)); 
-        });
+	      $('#id_products')
+		     .append($("<option></option>")
+		     .attr("value",-1)
+		     .text("---------")); 
+        len = Object.keys(matching_products).length;
+        if (!len){ 
+        } else {
+	        $.each(matching_products, function(key, value) {   
+	            $('#id_products')
+	             .append($("<option></option>")
+	             .attr("value",key)
+	             .text(value)); 
+	        });
+        }
     });
 });
 
@@ -67,7 +91,7 @@ $("#id_products").change(function() {
 
 $(function() {
   $("#id_product").autocomplete({
-    source: "comedi:ajax_productAutocomplete",
+    source: "{% url 'comedi:ajax_productAutocomplete' %}",
     minLength: 2,
     selectFirst:true,
     select:function(event,ui) {
