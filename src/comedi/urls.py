@@ -16,6 +16,7 @@ urlpatterns = patterns( '',
 
     url( r'^order/search$', views.orderSearch_view, name = 'order_search' ),
     url( r'^order/list$', views.orderList_view.as_view(), name = 'order_list' ),
+    url( r'^order/detail/(?P<pk>\d+)$', views.orderDetail_view.as_view(), name = 'order_detail' ),
 
 #     url( r'^logout', views.logout_view, {'next_page': 'comedi/'}, name = 'logout' ),
  )

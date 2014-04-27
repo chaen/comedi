@@ -10,15 +10,47 @@
 
 
 {% block content %}<div id="content-main">
+<h1>Orders</h1>
 
+<div class="results">
+<table id="result_list">
+<thead>
+<tr>
 
-<h1>Articles</h1>
-<ul>
-{% for article in order_list %}
-    <li>{{ article.client }} - {{ article.period }}</li>
+<th scope="col"  class="column-__str__">   
+   <div class="text"><span>Code</span></div>
+   <div class="clear"></div>
+</th>
+
+<th scope="col"  class="column-__str__">   
+   <div class="text"><span>Client</span></div>
+   <div class="clear"></div>
+</th>
+
+<th scope="col"  class="column-__str__">   
+   <div class="text"><span>Date</span></div>
+   <div class="clear"></div>
+</th>
+
+</tr>
+</thead>
+<tbody>
+
+{% for order in order_list %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+      <th><a href="{% url 'comedi:order_detail' order.id %}">{{ order.code }}</a></th>
+      <th>{{ order.client }}</th>
+      <th>{{ order.pickup_date }}</th>
+    </tr>
 {% empty %}
     <li>No articles yet.</li>
 {% endfor %}
+
+</tbody>
+</table>
+</div>
+<p><p>
+
 {% if is_paginated %}
         <div class="pagination">
             <span class="page-links">

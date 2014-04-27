@@ -8,6 +8,7 @@ import datetime
 from django.contrib.admin.widgets import AdminDateWidget
 from django.shortcuts import get_object_or_404, render
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 import json
 
 
@@ -62,14 +63,6 @@ class orderList_view( ListView ):
       if period:
         self.request.session['order_form']['period'] = period
 
-#       self.searchFilters['client'] = client
-#       self.productName = productName
-#     else:
-#       self.searchFilters = {}
-#       if self.request.session:
-#         self.searchFilter = self.request.session.get( 'order_form', {} )
-#         self.productName = self.request.session.get( 'order_form', {} ).get( 'client', None )
-
     return super( orderList_view, self ).get( request, *args, **kwargs )
 
   def get_queryset( self ):
@@ -86,10 +79,12 @@ class orderList_view( ListView ):
         queryset = queryset.filter( period__exact = searchFilters.get( 'period' ) )
     return queryset
 
-#   def get_context_data( self, **kwargs ):
-#     context = super( orderList_view, self ).get_context_data( **kwargs )
-#     return context
 
   def post( self, request, *args, **kwargs ):
     self.form = OrderSearchForm( request.POST )  # A form bound to the POST data
     return self.get( request, *args, **kwargs )
+
+
+class orderDetail_view(DetailView):
+  model = Order
+  template_name = 'comedi/order/order_detail.html'
