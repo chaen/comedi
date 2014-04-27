@@ -14,6 +14,9 @@ urlpatterns = patterns( '',
     url( r'^ajax_getProductNamesFromSubFamily', views.ajax_getProductNamesFromSubFamily, name = 'ajax_getProductNamesFromSubFamily' ),
     url( r'^ajax_productAutocomplete', views.ajax_productAutocomplete, name = 'ajax_productAutocomplete' ),
 
+    url( r'^order/search$', views.orderSearch_view, name = 'order_search' ),
+    url( r'^order/list$', views.orderList_view.as_view(), name = 'order_list' ),
+
 #     url( r'^logout', views.logout_view, {'next_page': 'comedi/'}, name = 'logout' ),
  )
 

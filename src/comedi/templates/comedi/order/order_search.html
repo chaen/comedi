@@ -1,0 +1,22 @@
+{% extends "copy_admin/base_site.html" %}
+{% load static %}
+{% load staticfiles %}
+
+{% block extrahead %}{{ block.super }}
+{{ form.media }} 
+{% endblock %}
+
+
+
+
+{% block content %}<div id="content-main">
+
+<form action="{% url 'comedi:order_list' %}" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+
+</form>
+
+{% endblock %}
+</div>
+
