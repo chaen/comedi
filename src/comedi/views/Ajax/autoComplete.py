@@ -1,4 +1,4 @@
-from comedi.models.person import Client
+from comedi.models import Client, Product
 import json
 from django.http import HttpResponse
 from django.db.models import Q
@@ -13,5 +13,18 @@ def ajax_clientAutocomplete( request ):
       client_json['label'] = client.complete_name
       client_json['value'] = client.complete_name
       results.append( client_json )
+  data = json.dumps( results )
+  return HttpResponse( data )
+
+def ajax_productAutocomplete( request ):
+  q = request.GET.get( 'term', '' )
+  products = Product.objects.filter( name__icontains = q ) [:20]
+  results = []
+  for product in products:
+      product_json = {}
+      product_json['id'] = product.id
+      product_json['label'] = product.name
+      product_json['value'] = product.name
+      results.append( product_json )
   data = json.dumps( results )
   return HttpResponse( data )

@@ -19,5 +19,10 @@ urlpatterns = patterns( '',
     url( r'^order/detail/(?P<pk>\d+)$', views.orderDetail_view.as_view(), name = 'order_detail' ),
     url( r'^ajax_clientAutocomplete', views.Ajax.ajax_clientAutocomplete, name = 'ajax_clientAutocomplete' ),
 #     url( r'^logout', views.logout_view, {'next_page': 'comedi/'}, name = 'logout' ),
+    url( r'^far/search$', views.farSearch_view, name = 'far_search' ),
+    url( r'^far/list$', views.farList_view.as_view(), name = 'far_list' ),
+
+    url( r'^client/detail/(?P<pk>\d+)$', views.clientDetail_view.as_view(), name = 'client_detail' ),
+
  )
 

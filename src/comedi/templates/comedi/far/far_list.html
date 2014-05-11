@@ -1,0 +1,92 @@
+{% extends "copy_admin/base_site.html" %}
+{% load static %}
+{% load staticfiles %}
+
+
+{% block extrahead %}{{ block.super }}
+{{ form.media }} 
+<script type="text/javascript" src='{% static "js/utilities.js" %}'></script> 
+{% endblock %}
+
+
+
+{% block content %}<div id="content-main">
+
+
+<h1>FAR {{ far_prod }}</h1>
+
+<div class="results">
+<table id="result_list">
+<thead>
+<tr>
+
+<th scope="col"  class="column-__str__">   
+   <div class="text"><span>Code</span></div>
+   <div class="clear"></div>
+</th>
+
+<th scope="col"  class="column-__str__">   
+   <div class="text"><span>Client</span></div>
+   <div class="clear"></div>
+</th>
+
+<th scope="col"  class="column-__str__">   
+   <div class="text"><span>Quantity</span></div>
+   <div class="clear"></div>
+</th>
+
+<th scope="col"  class="column-__str__">   
+   <div class="text"><span>Comment</span></div>
+   <div class="clear"></div>
+</th>
+
+<th scope="col"  class="column-__str__">   
+   <div class="text"><span>Date</span></div>
+   <div class="clear"></div>
+</th>
+
+
+</tr>
+</thead>
+<tbody>
+
+{% for far in far_list %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+      <th><a href="javascript:openInPopup('{% url 'comedi:order_detail' far.order_id %}','Order detail');">{{ far.order_code }}</a></th>
+      <th><a href="javascript:openInPopup('{% url 'comedi:client_detail' far.client_id %}','Client detail');">{{ far.client_name }}</a></th>
+      <th>{{ far.quantity }}</th>
+      <th>{{ far.comment }}</th>
+      <th>{{ far.pickup_date }}</th>
+    </tr>
+{% empty %}
+    <li>No FAR matching the product.</li>
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+<p><p>
+
+{% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+</ul>
+
+{% endblock %}
+</div>
+
+
+
+

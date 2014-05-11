@@ -1,0 +1,32 @@
+{% extends "copy_admin/base_site.html" %}
+{% load static %}
+{% load staticfiles %}
+
+{% block extrahead %}{{ block.super }}
+{{ form.media }} 
+{% endblock %}
+
+
+{% block content %}<div id="content-main">
+<h1>Client</h1>
+
+<fieldset class="module aligned ">
+  {% include "comedi/utilities/object_detail_item.html" with key="First name:" value=client.first_name %}
+  {% include "comedi/utilities/object_detail_item.html" with key="Last name:" value=client.last_name %}
+  {% include "comedi/utilities/object_detail_item.html" with key="Nickname:" value=client.nickname %}
+  {% include "comedi/utilities/object_detail_item.html" with key="Phone:" value=client.phone %}
+  {% include "comedi/utilities/object_detail_item.html" with key="Mobile:" value=client.cellphone %}
+  {% include "comedi/utilities/object_detail_item.html" with key="Email:" value=client.email %}
+  {% include "comedi/utilities/object_detail_item.html" with key="Comment:" value=client.comment %}
+  {% include "comedi/utilities/object_detail_item.html" with key="Star:" value=client.star %}
+  {% include "comedi/utilities/object_detail_item.html" with key="Address:" value=client.address %}
+  {% include "comedi/utilities/object_detail_item.html" with key="City:" value=client.city %}
+</fieldset>
+
+{% endblock %}
+
+</div>
+
+
+
+
