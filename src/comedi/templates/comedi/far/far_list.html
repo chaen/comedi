@@ -2,11 +2,11 @@
 {% load static %}
 {% load staticfiles %}
 
-
 {% block extrahead %}{{ block.super }}
 {{ form.media }} 
 <script type="text/javascript" src='{% static "js/utilities.js" %}'></script> 
 {% endblock %}
+{% load toPdf %}
 
 
 
@@ -14,6 +14,7 @@
 
 
 <h1>FAR {{ far_prod }}</h1>
+<a href="?format=pdf">Export as pdf</a>
 
 <div class="results">
 <table id="result_list">

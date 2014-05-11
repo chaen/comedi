@@ -3,7 +3,7 @@ from django import forms
 from comedi.models import Client, Period, Order, Product
 from django.contrib.admin.widgets import AdminDateWidget
 from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
+from utilities.pdfGeneration import PDFResponseMixin
 
 
 
@@ -37,12 +37,17 @@ class FarObj:
     self.pickup_date = pickup_date
 
 
-class farList_view( ListView ):
+
+
+class farList_view( PDFResponseMixin, ListView ):
 #   model = Order
   template_name = "comedi/far/far_list.html"
   paginate_by = 10
   context_object_name = "far_list"
   form = None
+  
+  pdf_table_title = ["N", "Client name", "Quantity", "Comment", "Pickup date"]
+  pdf_table_attribute = ["order_code", "client_name", "quantity", "comment", "pickup_date"]
 
 
   def get( self, request, *args, **kwargs ):
@@ -113,5 +118,7 @@ class farList_view( ListView ):
     context = super( farList_view, self ).get_context_data( **kwargs )
     context['far_prod'] = self.request.session.get( 'far_form', {} ).get( 'product' )
     return context
+
+
 
 

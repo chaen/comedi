@@ -5,3 +5,4 @@ from order_views import orderSearch_view, orderList_view, orderDetail_view
 import Ajax
 from far_views import farSearch_view, farList_view
 from client_views import clientDetail_view
+
