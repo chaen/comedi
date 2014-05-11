@@ -13,29 +13,17 @@
 <h1>Order</h1>
 
 <fieldset class="module aligned ">
-
   {% include "comedi/order/order_attribute.html" with key="Code:" value=order.code %}
-
   {% include "comedi/order/order_attribute.html" with key="Client:" value=order.client %}
-  
   {% include "comedi/order/order_attribute.html" with key="Comment:" value=order.comment %}
-  
   {% include "comedi/order/order_attribute.html" with key="Deposit:" value=order.deposit %}
-  
   {% include "comedi/order/order_attribute.html" with key="Order date:" value=order.order_date %}
-
   {% include "comedi/order/order_attribute.html" with key="Pickup date:" value=order.pickup_date %}
-  
   {% include "comedi/order/order_attribute.html" with key="Seller:" value=order.seller %}
-
   {% include "comedi/order/order_attribute.html" with key="Period:" value=order.period %}
-
   {% include "comedi/order/order_attribute.html" with key="Valid:" value=order.valid %}
-
   {% include "comedi/order/order_attribute.html" with key="Prepared:" value=order.prepared %}
- 
-  {% include "comedi/order/order_attribute.html" with key="Modified:" value=order.modified %}
- 
+  {% include "comedi/order/order_attribute.html" with key="Modified:" value=order.modified %} 
 </fieldset>
 
 

@@ -17,6 +17,25 @@
 
 </form>
 
+
+<script type="text/javascript">
+$("#id_clients").change(function() {
+    var client = $("option:selected",this).text();
+    $('#id_client').val(client);
+});
+
+$(function() {
+  $("#id_client").autocomplete({
+    source: "{% url 'comedi:ajax_clientAutocomplete' %}",
+    minLength: 2,
+    selectFirst:true,
+    select:function(event,ui) {
+       $("#id_client").val(ui.item.id)
+     }    
+  });
+});
+</script>
+
 {% endblock %}
 </div>
 

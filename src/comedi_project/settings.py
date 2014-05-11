@@ -122,3 +122,7 @@ CONSTANCE_CONFIG = {
 #     'DATE_ESTABLISHED': ( datetime( 1972, 11, 30 ), "the shop's first opening" ),
 }
 
+# DATE_INPUT_FORMATS = (
+#     '%Y-%m-%d', '%d-%m-%Y', '%m/%d/%y',  # '2006-10-25', '10/25/2006', '10/25/06'
+#  )
+

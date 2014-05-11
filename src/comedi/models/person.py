@@ -7,6 +7,7 @@ class Client(models.Model):
   first_name = models.CharField(max_length = 50)
   last_name = models.CharField(max_length = 50)
   nickname = models.CharField(max_length = 50, blank = True)
+  complete_name = models.CharField( max_length = 50, editable = False )
   phone = models.CharField(max_length = 15)
   cellphone = models.CharField(max_length = 15, blank = True)
   email = models.EmailField(max_length = 50, blank = True)
@@ -17,7 +18,11 @@ class Client(models.Model):
   
   def __unicode__(self):
     return "%s %s"%(self.first_name, self.last_name)
-  
+
+  def save( self, *args, **kwargs ):
+    complete_name = '%s %s' % ( self.first_name, self.last_name )
+    self.complete_name = complete_name
+    super( Client, self ).save( *args, **kwargs )
     
   class Meta:
     app_label = 'comedi'

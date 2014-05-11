@@ -52,3 +52,5 @@ class OrderItem( models.Model ):
   class Meta:
     app_label = 'comedi'
 
+  def __unicode__( self ):
+    return "%s %s %s" % ( self.product, self.quantity, self.unit )
