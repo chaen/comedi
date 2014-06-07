@@ -4,7 +4,9 @@ from comedi.models import Client, Period, Order, Product
 from django.contrib.admin.widgets import AdminDateWidget
 from django.views.generic.list import ListView
 from utilities.pdfGeneration import PDFResponseMixin
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.utils.translation import gettext_lazy as _
 
 
 
@@ -17,6 +19,7 @@ class FarSearchForm( forms.Form ):
   endDate = forms.DateField( widget = AdminDateWidget, required = False )
 
 
+@login_required
 def farSearch_view( request ):
     form = FarSearchForm()  # An unbound form
     request.session.pop( 'far_form', None )
@@ -27,7 +30,7 @@ def farSearch_view( request ):
 
 class FarObj:
 
-  def __init__( self, order_id, order_code, client_id, client_name, quantity, comment, pickup_date ):
+  def __init__( self, order_id, order_code, client_id, client_name, quantity, comment, pickup_date, prepared, ordered ):
     self.order_id = order_id
     self.order_code = order_code
     self.client_id = client_id
@@ -35,8 +38,8 @@ class FarObj:
     self.quantity = quantity
     self.comment = comment
     self.pickup_date = pickup_date
-
-
+    self.prepared = prepared
+    self.ordered = ordered
 
 
 class farList_view( PDFResponseMixin, ListView ):
@@ -46,7 +49,9 @@ class farList_view( PDFResponseMixin, ListView ):
   context_object_name = "far_list"
   form = None
   
-  pdf_table_title = ["N", "Client name", "Quantity", "Comment", "Pickup date"]
+  pdf_title = None
+  pdf_pagesize = 'landscape'
+  pdf_table_title = ["N", _( "Client" ), _( "Quantity" ), _( "Comment" ), _( "Pickup date" )]
   pdf_table_attribute = ["order_code", "client_name", "quantity", "comment", "pickup_date"]
 
 
@@ -82,8 +87,8 @@ class farList_view( PDFResponseMixin, ListView ):
 
   def get_queryset( self ):
     searchFilters = self.request.session.get( 'far_form', {} )
-    print "searchFilters %s" % searchFilters
     product = searchFilters['product']
+    self.pdf_title = "FAR %s" % product
     orderWithFarProduct = Order.objects.filter( orderitem__product__name = product )
 
     if 'startDate' in  searchFilters:
@@ -105,9 +110,22 @@ class farList_view( PDFResponseMixin, ListView ):
         quantity = "%s %s"%(item.quantity, item.unit.name)
         comment = "%s %s" % ( item.usualComment.comment if item.usualComment else "", item.extraComment )
         
-        queryset.append( FarObj( order_id, order_code, client_id, client_name, quantity, comment, pickup_date ) )
+        queryset.append( FarObj( order_id, order_code, client_id, client_name, quantity, comment, pickup_date, item.prepared, item.ordered ) )
 
     return queryset
+  
+  def get_pdf_style_per_line( self, orderedItemList ):
+    style = []
+    for item in orderedItemList:
+      itemStyle = None
+      if item.ordered:
+        itemStyle = ( 'TEXTCOLOR', 'orange' )
+      if item.prepared:
+        itemStyle = ( 'TEXTCOLOR', 'blue' )
+
+      style.append( itemStyle )
+    print "COUCOU %s" % style
+    return style
 
 
   def post( self, request, *args, **kwargs ):

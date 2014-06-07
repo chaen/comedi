@@ -1,6 +1,11 @@
+{% load i18n %}
+
   <div class="form-row field-code">    
     <div>        
-      <label class="required">{{  key }}</label>
+      {% trans key as trans_key %}
+      
+      
+      <label class="required">{{  trans_key }}:</label>
       <label for="id_code">{{ value }}</label>
     </div>          
   </div>

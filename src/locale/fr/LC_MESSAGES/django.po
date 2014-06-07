@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-07 16:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: comedi/models/city.py:6
+msgid "zip"
+msgstr "code postal"
+
+#: comedi/models/city.py:7 comedi/models/period.py:6
+#: comedi/models/person.py:35 comedi/models/product.py:6
+#: comedi/models/product.py:18 comedi/models/product.py:31
+#: comedi/models/product.py:43 comedi/models/product.py:56
+msgid "name"
+msgstr "Surnom"
+
+#: comedi/models/city.py:14 comedi/models/person.py:18
+msgid "city"
+msgstr "ville"
+
+#: comedi/models/city.py:15
+msgid "cities"
+msgstr "villes"
+
+#: comedi/models/order.py:14
+msgid "deposit mode"
+msgstr "Accompte"
+
+msgid "Deposit"
+msgstr "Accompte"
+
+#: comedi/models/order.py:23 comedi/models/order.py:54
+msgid "usual comment"
+msgstr "remarque"
+
+#: comedi/models/order.py:24
+msgid "usual comments"
+msgstr "remarque"
+
+#: comedi/models/order.py:30 comedi/models/product.py:57
+msgid "code"
+msgstr ""
+
+#: comedi/models/order.py:31
+msgid "client"
+msgstr ""
+
+#: comedi/models/order.py:32 comedi/models/period.py:10
+#: comedi/models/person.py:15
+msgid "comment"
+msgstr "remarque"
+
+#: comedi/models/order.py:33
+msgid "deposit"
+msgstr "Accompte"
+
+#: comedi/models/order.py:34
+msgid "order date"
+msgstr "date de prise de commande"
+
+msgid "Order date"
+msgstr "Date de prise de commande"
+
+#: comedi/models/order.py:35
+msgid "pickup date"
+msgstr "date de collecte"
+
+msgid "Pickup date"
+msgstr "Date de collecte"
+
+#: comedi/models/order.py:36
+msgid "seller"
+msgstr "vendeur"
+
+msgid "Seller"
+msgstr "Vendeur"
+
+#: comedi/models/order.py:37 comedi/models/period.py:18
+msgid "period"
+msgstr "periode"
+
+#: comedi/models/order.py:38
+msgid "valid"
+msgstr "valide"
+
+msgid "Valid"
+msgstr "Valide"
+
+#: comedi/models/order.py:46 comedi/models/order.py:56
+msgid "order"
+msgstr "commande"
+
+#: comedi/models/order.py:47
+msgid "orders"
+msgstr "commandes"
+
+#: comedi/models/order.py:51 comedi/models/product.py:79
+msgid "product"
+msgstr "produit"
+
+#: comedi/models/order.py:52
+msgid "unit"
+msgstr "unité"
+
+msgid "Unit"
+msgstr "Unité"
+
+#: comedi/models/order.py:53
+msgid "quantity"
+msgstr "quantité"
+
+#: comedi/models/order.py:55
+msgid "extra comment"
+msgstr "remarque supplementaire"
+
+msgid "Extra comment"
+msgstr "Remarque supplementaire"
+
+#: comedi/models/order.py:57
+msgid "prepared"
+msgstr "preparé"
+
+msgid "Prepared"
+msgstr "Preparé"
+
+#: comedi/models/order.py:58
+msgid "modified"
+msgstr "modifié"
+
+msgid "Modified"
+msgstr "Modifié"
+#: comedi/models/order.py:59
+msgid "ordered"
+msgstr "commandé"
+
+#: comedi/models/order.py:63
+msgid "item"
+msgstr "article"
+
+#: comedi/models/order.py:64
+msgid "items"
+msgstr "articles"
+
+#: comedi/models/period.py:7
+msgid "begin date"
+msgstr "Date de début"
+
+#: comedi/models/period.py:8
+msgid "end date"
+msgstr "date de fin"
+
+#: comedi/models/period.py:9
+msgid "archived"
+msgstr "archivé"
+
+#: comedi/models/period.py:11
+msgid "prefix"
+msgstr "préfix"
+
+#: comedi/models/period.py:19
+msgid "periods"
+msgstr "periodes"
+
+msgid "Period"
+msgstr "Periode"
+
+#: comedi/models/person.py:8
+msgid "first name"
+msgstr "Prenom"
+
+#: comedi/models/person.py:9
+msgid "last name"
+msgstr "Nom de famille"
+
+#: comedi/models/person.py:10
+msgid "nickname"
+msgstr "Surnom"
+
+#: comedi/models/person.py:12
+msgid "phone"
+msgstr "Telephone"
+
+#: comedi/models/person.py:13
+msgid "mobile"
+msgstr "Portable"
+
+#: comedi/models/person.py:16
+msgid "star"
+msgstr ""
+
+#: comedi/models/person.py:17
+msgid "address"
+msgstr "Adresse"
+
+#: comedi/models/product.py:19
+msgid "family"
+msgstr "famille"
+
+#: comedi/models/product.py:32 comedi/models/product.py:78
+msgid "rate"
+msgstr "taux"
+
+#: comedi/models/product.py:58
+msgid "price"
+msgstr "prix"
+
+#: comedi/models/product.py:59
+msgid "subFamily"
+msgstr "sous-famille"
+
+#: comedi/models/product.py:62
+msgid "production unit"
+msgstr "unité de production"
+
+#: comedi/models/product.py:63
+msgid "sell unit"
+msgstr "unité de vente"
+
+#: comedi/models/product.py:64
+msgid "locked"
+msgstr "verouillé"
+
+#: comedi/models/product.py:76
+msgid "start unit"
+msgstr "unité de départ"
+
+#: comedi/models/product.py:77
+msgid "end unit"
+msgstr "unité d'arrivée"
+
+#: comedi/templates/comedi/index.html:13
+msgid "Welcome to comedi!"
+msgstr "Bienvenue dans Comedi"
+
+#: comedi/templates/comedi/far/far_list.html:24
+#: comedi/templates/comedi/listingClient/listingClient_list.html:25
+#: comedi/templates/comedi/order/order_list.html:22
+msgid "Code"
+msgstr ""
+
+#: comedi/templates/comedi/far/far_list.html:29
+#: comedi/templates/comedi/listingClient/listingClient_list.html:30
+#: comedi/templates/comedi/order/order_list.html:27
+msgid "Client"
+msgstr ""
+
+#: comedi/templates/comedi/far/far_list.html:34
+msgid "Quantity"
+msgstr "Quantité"
+
+#: comedi/templates/comedi/far/far_list.html:39
+msgid "Comment"
+msgstr "Remarque"
+
+#: comedi/templates/comedi/far/far_list.html:44
+#: comedi/templates/comedi/order/order_list.html:32
+msgid "Date"
+msgstr ""
+
+#: comedi/templates/comedi/listingClient/listingClient_list.html:16
+msgid "Listing Client from"
+msgstr "Liste Clients du"
+
+#: comedi/templates/comedi/listingClient/listingClient_list.html:16
+msgid "to"
+msgstr "à"
+
+#: comedi/templates/comedi/listingClient/listingClient_list.html:35
+msgid "Items"
+msgstr "Articles"
+
+#: comedi/templates/comedi/listingClient/listingClient_list.html:49
+msgid "No Listing Client matching the criteria."
+msgstr "Aucun listing client ne correspond aux critères"
+
+#: comedi/templates/comedi/order/order_list.html:14
+#: comedi/templates/copy_admin/base.html:66
+msgid "Orders"
+msgstr "Commandes"
+
+#: comedi/templates/copy_admin/base.html:41
+msgid "Welcome,"
+msgstr "Bienvenue,"
+
+#: comedi/templates/copy_admin/base.html:47
+msgid "Documentation"
+msgstr ""
+
+#: comedi/templates/copy_admin/base.html:50
+msgid "Change password"
+msgstr "Changer mot de passe"
+
+#: comedi/templates/copy_admin/base.html:53
+msgid "Log out"
+msgstr "Deconnexion"
+
+#: comedi/templates/copy_admin/base.html:55
+msgid "Looooog out"
+msgstr ""
+
+#: comedi/templates/copy_admin/base.html:65
+#: comedi/templates/copy_admin/base_site.html:7
+msgid "Comedi"
+msgstr ""
+
+#: comedi/templates/copy_admin/base.html:67
+msgid "FAR"
+msgstr "FAR"
+
+#: comedi/templates/copy_admin/base.html:68
+msgid "Listing Client"
+msgstr "Liste Clients"
+
+#: comedi/templates/copy_admin/base.html:70
+msgid "Admin"
+msgstr "Admin"
+
+#: comedi/templates/copy_admin/base_site.html:4
+msgid "Django site admin"
+msgstr ""
+
+#: comedi_project/settings.py:99
+msgid "Francais"
+msgstr ""
+
+#: constance/admin.py:97
+msgid "Live settings updated successfully."
+msgstr ""
+
+#: constance/admin.py:102
+msgid "Constance config"
+msgstr ""
+
+#: constance/admin.py:145
+msgid "config"
+msgstr ""
+
+#: constance/backends/database/models.py:19
+msgid "constance"
+msgstr ""
+
+#: constance/backends/database/models.py:20
+msgid "constances"
+msgstr ""
+
+#: constance/templates/admin/constance/change_list.html:39
+msgid "Name"
+msgstr "Nom"
+
+#: constance/templates/admin/constance/change_list.html:40
+msgid "Default"
+msgstr ""
+
+#: constance/templates/admin/constance/change_list.html:41
+msgid "Value"
+msgstr "Valeur"
+
+#: constance/templates/admin/constance/change_list.html:42
+msgid "Is modified"
+msgstr "Est modifé"
+
+#: constance/templates/admin/constance/change_list.html:68
+msgid "Save"
+msgstr "Enregistrer"
+
+#: constance/templates/admin/constance/change_list.html:78
+msgid "Home"
+msgstr ""
+
+msgid "City"
+msgstr "Ville"
+
+msgid "Star"
+msgstr "Etoile"

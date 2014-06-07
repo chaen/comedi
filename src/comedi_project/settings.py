@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+from django.utils.translation import gettext_lazy as _
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -54,6 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 #     'django_options.middleware.OptionsLoaderMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 
 )
 
@@ -85,7 +86,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr'
 
 TIME_ZONE = 'UTC'
 
@@ -94,7 +95,15 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+LANGUAGES = ( 
+    ( 'fr', _( 'Francais' ) ),
+#     ( 'en', _( 'Anglais' ) ),
 
+ )
+
+LOCALE_PATHS = ( 
+    'locale/',
+ )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
@@ -109,6 +118,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     # ...
     'django.contrib.auth.context_processors.auth',
     'constance.context_processors.config',
+    "django.core.context_processors.i18n",
  )
 
 

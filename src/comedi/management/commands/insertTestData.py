@@ -170,8 +170,7 @@ class Command(NoArgsCommand):
                       seller = sellers.values()[randint( 0, nb_seller - 1 )],
                       period = per,
                       valid = ([0] + [1] *10)[randint(0,10)],
-                      prepared = randint( 0, 1 ),
-                      modified = randint( 0, 1 ) )
+                      )
         orders[order.code] = order
         order.save()
 
@@ -183,6 +182,9 @@ class Command(NoArgsCommand):
                                 quantity = uniform(1,10),
                                 usualComment = ([None] + usualComments.values())[randint(0,len(usualComments))],
                                 extraComment = "comment",
-                                order = order )
+                                order = order,
+                                prepared = randint( 0, 1 ),
+                                modified = randint( 0, 1 ),
+                                ordered = randint( 0, 1 ) )
           orderItem.save()
           print "\t%s" % orderItem

@@ -23,6 +23,11 @@ urlpatterns = patterns( '',
     url( r'^far/list$', views.farList_view.as_view(), name = 'far_list' ),
 
     url( r'^client/detail/(?P<pk>\d+)$', views.clientDetail_view.as_view(), name = 'client_detail' ),
+    url( r'^listingClient/search$', views.listingClientSearch_view, name = 'listingClient_search' ),
+    url( r'^listingClient/list$', views.listingClientList_view.as_view(), name = 'listingClient_list' ),
+
+    url( r'^getGraphData', views.getGraphData, name = 'getGraphData' ),
+
 
  )
 

@@ -3,17 +3,18 @@
 {% load staticfiles %}
 {% load i18n %}
 
+
 {% block extrahead %}{{ block.super }}
 {{ form.media }} 
 <script type="text/javascript" src='{% static "js/utilities.js" %}'></script> 
-
 {% endblock %}
 
 
 
-
 {% block content %}<div id="content-main">
-<h1>{% trans "Orders" %}</h1>
+
+<h1>{% trans "Listing Client from" %} {{ listingClient_startDate }} {% trans "to" %} {{ listingClient_endDate }}</h1>
+<a href="?format=pdf">Export as pdf</a>
 
 <div class="results">
 <table id="result_list">
@@ -31,22 +32,21 @@
 </th>
 
 <th scope="col"  class="column-__str__">   
-   <div class="text"><span>{% trans "Date" %}</span></div>
+   <div class="text"><span>{% trans "Items" %}</span></div>
    <div class="clear"></div>
 </th>
-
 </tr>
 </thead>
 <tbody>
 
-{% for order in order_list %}
+{% for order in listingClient_list %}
     <tr class="{% cycle 'row1' 'row2' %}">
-      <th><a href="javascript:openInPopup('{% url 'comedi:order_detail' order.id %}','Order detail');">{{ order.code }}</a></th>
-      <th><a href="javascript:openInPopup('{% url 'comedi:client_detail' order.client.id %}','Client detail');">{{ order.client }}</a></th>
-      <th>{{ order.pickup_date }}</th>
+      <th><a href="javascript:openInPopup('{% url 'comedi:order_detail' order.order_id %}','Order detail');">{{ order.order_code }}</a></th>
+      <th><a href="javascript:openInPopup('{% url 'comedi:client_detail' order.client_id %}','Client detail');">{{ order.client_name }}</a></th>
+      <th>{{ order.nbOfItems }}</th>
     </tr>
 {% empty %}
-    <li>No articles yet.</li>
+    <li>{% trans "No Listing Client matching the criteria." %}</li>
 {% endfor %}
 
 </tbody>

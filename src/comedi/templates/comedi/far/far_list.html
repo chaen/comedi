@@ -1,12 +1,13 @@
 {% extends "copy_admin/base_site.html" %}
 {% load static %}
 {% load staticfiles %}
+{% load i18n %}
+
 
 {% block extrahead %}{{ block.super }}
 {{ form.media }} 
 <script type="text/javascript" src='{% static "js/utilities.js" %}'></script> 
 {% endblock %}
-{% load toPdf %}
 
 
 
@@ -22,27 +23,27 @@
 <tr>
 
 <th scope="col"  class="column-__str__">   
-   <div class="text"><span>Code</span></div>
+   <div class="text"><span>{% trans 'Code' %}</span></div>
    <div class="clear"></div>
 </th>
 
 <th scope="col"  class="column-__str__">   
-   <div class="text"><span>Client</span></div>
+   <div class="text"><span>{% trans 'Client' %}</span></div>
    <div class="clear"></div>
 </th>
 
 <th scope="col"  class="column-__str__">   
-   <div class="text"><span>Quantity</span></div>
+   <div class="text"><span>{% trans 'Quantity' %}</span></div>
    <div class="clear"></div>
 </th>
 
 <th scope="col"  class="column-__str__">   
-   <div class="text"><span>Comment</span></div>
+   <div class="text"><span>{% trans 'Comment' %}</span></div>
    <div class="clear"></div>
 </th>
 
 <th scope="col"  class="column-__str__">   
-   <div class="text"><span>Date</span></div>
+   <div class="text"><span>{% trans 'Date' %}</span></div>
    <div class="clear"></div>
 </th>
 

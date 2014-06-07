@@ -3,15 +3,16 @@
 <head>
 <title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
-<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="{% static 'css/smoothness/jquery-ui.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'admin/css/forms.css' %} "/>
 <link rel="stylesheet" type="text/css" href="{% static 'admin/css/widgets.css' %}"/>
 {% block extrastyle %}{% endblock %}
 <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% static "admin/css/ie.css" %}{% endblock %}" /><![endif]-->
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
 <script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src='{% static "js/jquery/1.11.0/jquery.min.js" %}'></script> 
+<script type="text/javascript" src='{% static "js/awesomechart.js" %}'></script> 
+<script type="text/javascript" src='{% static "js/jqueryui/1.10.4/jquery-ui.min.js" %}'></script> 
 <script type="text/javascript" src="{% static 'admin/js/core.js' %}"></script>
 <script type="text/javascript" src="{% static 'admin/js/admin/RelatedObjectLookups.js' %}"></script>
 <script type="text/javascript" src="{% static 'admin/js/jquery.js' %}"></script>
@@ -64,6 +65,7 @@
     <a href="{% url 'comedi:index' %}">{% trans 'Comedi' %}</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="{% url 'comedi:order_search' %}">{% trans 'Orders' %}</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="{% url 'comedi:far_search' %}">{% trans 'FAR' %}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'comedi:listingClient_search' %}">{% trans 'Listing Client' %}</a>&nbsp;&nbsp;&nbsp;&nbsp;
     {% if title %} &rsaquo; {{ title }}{% endif %}
      <a href="{% url 'admin:index' %}">{% trans 'Admin' %}</a>  
     

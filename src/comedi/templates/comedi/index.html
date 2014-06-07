@@ -1,0 +1,50 @@
+{% extends "copy_admin/base_site.html" %}
+{% load static %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extrahead %}{{ block.super }}
+{{ form.media }} 
+<script type="text/javascript" src='{% static "js/awesomechart.js" %}'></script> 
+{% endblock %}
+
+
+{% block content %}<div id="content-main">
+{% trans 'Welcome to comedi!' %}
+
+
+
+
+
+<canvas id="canvas1" width="300" height="300">
+        Your web-browser does not support the HTML 5 canvas element.
+    </canvas>
+                        
+    <script type="application/javascript">
+      function drawMyChart(){
+        var data = [];
+        var title = [];
+        if(!!document.createElement('canvas').getContext){ //check that the canvas
+                                                           // element is supported
+                                                           
+          $.getJSON("{% url 'comedi:getGraphData' %}",  function(titleAndData) {
+              var dataPlot = titleAndData[1];
+              var titlePlot = titleAndData[0];
+      
+	                     
+           var mychart = new AwesomeChart('canvas1');
+           mychart.title = "Max sold product";
+           //mychart.data = [1532, 3251, 3460, 1180, 6543];
+           mychart.data = dataPlot;
+           //mychart.labels = ["Desktops", "Laptops", "Netbooks", "Tablets", "Smartphones"];
+           mychart.labels = titlePlot;
+           mychart.draw();
+           });
+           
+        }
+      }
+      
+      window.onload = drawMyChart;
+    </script>
+</div>
+{% endblock %}
