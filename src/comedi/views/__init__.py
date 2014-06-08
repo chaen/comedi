@@ -6,4 +6,4 @@ import Ajax
 from far_views import farSearch_view, farList_view
 from client_views import clientDetail_view
 from listingClient_views import listingClientSearch_view, listingClientList_view
-
+from statistic_views import statistic, getTestData, statisticPeriod_view, statisticShow_view, getMostSoldItemsForPeriod

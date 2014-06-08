@@ -1,0 +1,45 @@
+{% extends "copy_admin/base_site.html" %}
+{% load static %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+
+
+{% block extrahead %}{{ block.super }}
+{{ form.media }} 
+<script type="text/javascript" src='{% static "js/awesomechart.js" %}'></script> 
+{% endblock %}
+
+
+{% block content %}<div id="content-main">
+
+<canvas id="canvas1" width="300" height="300">
+        Your web-browser does not support the HTML 5 canvas element.
+    </canvas>
+                        
+    <script type="application/javascript" src='{% static "js/statistic.js" %}'></script>
+    
+    <script type="application/javascript">
+    window.onload = drawMyChart("{% url 'comedi:getTestData' %}", 'canvas1', "Max sooold product", 'exploded pie');
+    </script>
+    
+    
+    
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        <h2>{% trans 'Recent Actions' %}</h2>
+        <h3>{% trans 'My Actions' %}</h3>
+        
+    </div>
+</div>
+{% endblock %}

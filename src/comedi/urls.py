@@ -28,6 +28,14 @@ urlpatterns = patterns( '',
 
     url( r'^getGraphData', views.getGraphData, name = 'getGraphData' ),
 
+    url( r'^statistic_period$', views.statisticPeriod_view, name = 'statistic_period' ),
+    url( r'^getMostSoldItemsForPeriod', views.getMostSoldItemsForPeriod, name = 'getMostSoldItemsForPeriod' ),
+
+    url( r'^statistic/search$', views.statisticPeriod_view, name = 'statistic_search' ),
+    url( r'^statistic/show', views.statisticShow_view, name = 'statistic_show' ),
+        url( r'^ajax_periodAutocomplete', views.Ajax.ajax_periodAutocomplete, name = 'ajax_periodAutocomplete' ),
+
+
 
  )
 

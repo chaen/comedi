@@ -1,0 +1,30 @@
+{% extends "copy_admin/base_site.html" %}
+{% load static %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+
+
+{% block extrahead %}{{ block.super }}
+{{ form.media }} 
+<script type="text/javascript" src='{% static "js/awesomechart.js" %}'></script> 
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        <h2>{% trans 'Statistics' %}</h2>
+        <h3>{% trans 'My Actions' %}</h3>
+        <ul class="actionlist">
+            <li><a href="{% url 'comedi:statistic_period' %}">Per period</a></li>
+        </ul>
+        
+    </div>
+</div>
+{% endblock %}

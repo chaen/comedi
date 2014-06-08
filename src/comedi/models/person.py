@@ -27,8 +27,8 @@ class Client(models.Model):
     
   class Meta:
     app_label = 'comedi'
-    verbose_name = 'client'
-    verbose_name_plural = 'clients'
+    verbose_name = _( 'client' )
+    verbose_name_plural = _( 'clients' )
 
 
 class Seller( models.Model ):
@@ -40,5 +40,5 @@ class Seller( models.Model ):
 
   class Meta:
     app_label = 'comedi'
-    verbose_name = 'seller'
-    verbose_name_plural = 'sellers'
+    verbose_name = _( 'seller' )
+    verbose_name_plural = _( 'sellers' )

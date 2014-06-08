@@ -26,7 +26,7 @@ msgstr "code postal"
 #: comedi/models/product.py:18 comedi/models/product.py:31
 #: comedi/models/product.py:43 comedi/models/product.py:56
 msgid "name"
-msgstr "Surnom"
+msgstr "nom"
 
 #: comedi/models/city.py:14 comedi/models/person.py:18
 msgid "city"
@@ -86,6 +86,9 @@ msgstr "Date de collecte"
 msgid "seller"
 msgstr "vendeur"
 
+msgid "sellers"
+msgstr "vendeurs"
+
 msgid "Seller"
 msgstr "Vendeur"
 
@@ -111,6 +114,10 @@ msgstr "commandes"
 #: comedi/models/order.py:51 comedi/models/product.py:79
 msgid "product"
 msgstr "produit"
+
+msgid "products"
+msgstr "produits"
+
 
 #: comedi/models/order.py:52
 msgid "unit"
@@ -180,22 +187,37 @@ msgstr "Periode"
 
 #: comedi/models/person.py:8
 msgid "first name"
+msgstr "prenom"
+
+msgid "First name"
 msgstr "Prenom"
 
 #: comedi/models/person.py:9
 msgid "last name"
+msgstr "nom de famille"
+
+msgid "Last name"
 msgstr "Nom de famille"
 
 #: comedi/models/person.py:10
 msgid "nickname"
+msgstr "surnom"
+
+msgid "Nickname"
 msgstr "Surnom"
 
 #: comedi/models/person.py:12
 msgid "phone"
-msgstr "Telephone"
+msgstr "telephone"
 
+msgid "Phone"
+msgstr "Telephone"
 #: comedi/models/person.py:13
+
 msgid "mobile"
+msgstr "portable"
+
+msgid "Mobile"
 msgstr "Portable"
 
 #: comedi/models/person.py:16

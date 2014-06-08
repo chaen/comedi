@@ -10,8 +10,8 @@ class Family(models.Model):
 
   class Meta:
     app_label = 'comedi'
-    verbose_name = 'family'
-    verbose_name_plural = 'families'
+    verbose_name = _( 'family' )
+    verbose_name_plural = _( 'families' )
 
 class SubFamily(models.Model):
   
@@ -23,8 +23,8 @@ class SubFamily(models.Model):
 
   class Meta:
     app_label = 'comedi'
-    verbose_name = 'subFamily'
-    verbose_name_plural = 'subFamilies'
+    verbose_name = _( 'subFamily' )
+    verbose_name_plural = _( 'subFamilies' )
 
 class Tva(models.Model):
 
@@ -47,8 +47,8 @@ class Unit(models.Model):
 
   class Meta:
     app_label = 'comedi'
-    verbose_name = 'unit'
-    verbose_name_plural = 'units'
+    verbose_name = _( 'unit' )
+    verbose_name_plural = _( 'units' )
 
 
 class Product(models.Model):
@@ -68,8 +68,8 @@ class Product(models.Model):
 
   class Meta:
     app_label = 'comedi'
-    verbose_name = 'product'
-    verbose_name_plural = 'products'
+    verbose_name = _( 'product' )
+    verbose_name_plural = _( 'products' )
 
 class UnitConversion( models.Model ):
   
@@ -83,4 +83,4 @@ class UnitConversion( models.Model ):
 
   class Meta:
     app_label = 'comedi'
-    verbose_name = 'unit conversion'
+    verbose_name = _( 'unit conversion' )
