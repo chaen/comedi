@@ -36,17 +36,16 @@
 
 
 <script>
-    $(function() {
-        $("#statForm").on("submit", function(e) {
-            e.preventDefault();
-            var periodName = $('#id_period').val();
-            $.getJSON("{% url 'comedi:getMostSoldItemsForPeriod' %}",  { periodName: periodName }, function(titleAndData) {
-              drawMyChart(titleAndData[0], titleAndData[1], 'canvas1', "Most sold items", 'pareto');    
-                            drawMyChart(titleAndData[0], titleAndData[1], 'canvas2', "Most sold items", 'exploded pie');              
-                        
-            });
-        });
-    });
+	$(function() {
+	    $("#statForm").on("submit", function(e) {
+	        e.preventDefault();
+	        var periodName = $('#id_period').val();
+	        $.getJSON("{% url 'comedi:getMostSoldItemsForPeriod' %}",  { periodName: periodName }, function(titleAndData) {
+	            drawMyChart(titleAndData[0], titleAndData[1], 'canvas1', "Most sold items", 'pareto');    
+	            drawMyChart(titleAndData[0], titleAndData[1], 'canvas2', "Most sold items", 'exploded pie');        
+	        });
+	    });
+	});
 </script>
 
 <script type="text/javascript">
