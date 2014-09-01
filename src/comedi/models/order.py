@@ -18,6 +18,9 @@ class UsualComment( models.Model ):
 
   comment = models.CharField( max_length = 200 )
 
+  def __unicode__( self ):
+    return "%s" % ( self.comment )
+
   class Meta:
     app_label = 'comedi'
     verbose_name = _( 'usual comment' )

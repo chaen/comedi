@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from models import Family, SubFamily, Unit, UnitConversion, Tva, \
-                   Product, Order, OrderItem, City, Client, Seller, Period
+                   Product, Order, OrderItem, City, Client, Seller, Period, UsualComment
 
 admin.site.register( Family )
 admin.site.register( SubFamily )
@@ -13,6 +13,7 @@ admin.site.register( City )
 admin.site.register( Client )
 admin.site.register( Seller )
 admin.site.register( Period )
+admin.site.register( UsualComment )
 
 class UnitConversionInline( admin.StackedInline ):
   model = UnitConversion

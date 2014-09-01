@@ -121,10 +121,10 @@ msgstr "produits"
 
 #: comedi/models/order.py:52
 msgid "unit"
-msgstr "unité"
+msgstr "unite"
 
 msgid "Unit"
-msgstr "Unité"
+msgstr "Unite"
 
 #: comedi/models/order.py:53
 msgid "quantity"
@@ -246,11 +246,11 @@ msgstr "sous-famille"
 
 #: comedi/models/product.py:62
 msgid "production unit"
-msgstr "unité de production"
+msgstr "unite de production"
 
 #: comedi/models/product.py:63
 msgid "sell unit"
-msgstr "unité de vente"
+msgstr "unite de vente"
 
 #: comedi/models/product.py:64
 msgid "locked"
@@ -258,11 +258,11 @@ msgstr "verouillé"
 
 #: comedi/models/product.py:76
 msgid "start unit"
-msgstr "unité de départ"
+msgstr "unite de départ"
 
 #: comedi/models/product.py:77
 msgid "end unit"
-msgstr "unité d'arrivée"
+msgstr "unite d'arrivée"
 
 #: comedi/templates/comedi/index.html:13
 msgid "Welcome to comedi!"
