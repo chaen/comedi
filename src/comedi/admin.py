@@ -21,7 +21,7 @@ class UnitConversionInline( admin.StackedInline ):
 
 class ProductAdmin( admin.ModelAdmin ):
   inlines = [UnitConversionInline]
-
+  list_display = ('name',)
 admin.site.register( Product, ProductAdmin )
 
 
@@ -34,6 +34,9 @@ class OrderAdmin( admin.ModelAdmin ):
   inlines = [OrderItemInline]
 
 admin.site.register( Order, OrderAdmin )
+
+
+
 
 # from django import forms
 #

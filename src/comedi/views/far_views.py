@@ -124,7 +124,6 @@ class farList_view( PDFResponseMixin, ListView ):
         itemStyle = ( 'TEXTCOLOR', 'blue' )
 
       style.append( itemStyle )
-    print "COUCOU %s" % style
     return style
 
 

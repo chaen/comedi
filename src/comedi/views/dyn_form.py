@@ -30,7 +30,7 @@ import json
 # </script>
 
 def ajax_getSubFamilyNamesFromFamily( request ):
-  subFamilyObjs = SubFamily.objects.filter( family__pk = request.GET["family"] ) 
+  subFamilyObjs = SubFamily.objects.filter( family__pk = request.GET["family"] )
   if not subFamilyObjs:
     subFamilyObjs = SubFamily.objects.all()
   subFamilies = dict( ( sf.id , sf.name ) for sf in subFamilyObjs )
@@ -42,7 +42,7 @@ def ajax_getSubFamilyNamesFromFamily( request ):
   return HttpResponse( ret )
 
 def ajax_getProductNamesFromSubFamily( request ):
-  productObjs = Product.objects.filter( subFamily__pk = request.GET["subFamily"] ) 
+  productObjs = Product.objects.filter( subFamily__pk = request.GET["subFamily"] )
   if not productObjs:
     productObjs = Product.objects.all()
   products = dict( ( p.id , p.name ) for p in productObjs )
@@ -52,8 +52,8 @@ def ajax_getProductNamesFromSubFamily( request ):
     print e
   return HttpResponse( ret )
 
-def ajax_productAutocomplete(request):
-  q = request.GET.get('term', '')
+def ajax_productAutocomplete( request ):
+  q = request.GET.get( 'term', '' )
   products = Product.objects.filter( name__icontains = q )[:20]
   results = []
   for product in products:
@@ -89,11 +89,11 @@ def dyn_form( request ):
 
 def dyn_form_result( request ):
 
-  if request.method == 'POST': # If the form has been submitted...                                                                                                                                                 
-    form = ProductForm(request.POST) # A form bound to the POST data                                                                                                                                             
-    if form.is_valid(): # All validation rules pass                                                                                                                                                              
+  if request.method == 'POST':  # If the form has been submitted...
+    form = ProductForm( request.POST )  # A form bound to the POST data
+    if form.is_valid():  # All validation rules pass
       product_name = form.cleaned_data['product']
-      print "Product %s"%product_name
+      print "Product %s" % product_name
       product = get_object_or_404( Product, name = product_name )
       return render( request, 'comedi/dyn_form_result.html', {'product': product} )
 
@@ -126,7 +126,7 @@ class dyn_form_result2( ListView ):
       if self.request.session:
         self.productName = self.request.session.get( 'dyn_form', {} ).get( 'productName', None )
 
-      
+
 
 
     return super( dyn_form_result2, self ).get( request, *args, **kwargs )
