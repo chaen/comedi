@@ -12,6 +12,7 @@ class Family(models.Model):
     app_label = 'comedi'
     verbose_name = _( 'family' )
     verbose_name_plural = _( 'families' )
+    ordering = ['name']
 
 class SubFamily(models.Model):
   
@@ -25,6 +26,7 @@ class SubFamily(models.Model):
     app_label = 'comedi'
     verbose_name = _( 'subFamily' )
     verbose_name_plural = _( 'subFamilies' )
+    ordering = ['name']
 
 class Tva(models.Model):
 
@@ -36,7 +38,7 @@ class Tva(models.Model):
 
   class Meta:
     app_label = 'comedi'
-
+    ordering = ['name']
 
 class Unit(models.Model):
   
@@ -49,6 +51,7 @@ class Unit(models.Model):
     app_label = 'comedi'
     verbose_name = _( 'unit' )
     verbose_name_plural = _( 'units' )
+    ordering = ['name']
 
 
 class Product(models.Model):
@@ -70,6 +73,7 @@ class Product(models.Model):
     app_label = 'comedi'
     verbose_name = _( 'product' )
     verbose_name_plural = _( 'products' )
+    ordering = ['name']
 
 class UnitConversion( models.Model ):
   

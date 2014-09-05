@@ -13,3 +13,4 @@ class City(models.Model):
     app_label = 'comedi'
     verbose_name = _( 'city' )
     verbose_name_plural = _( 'cities' )
+    ordering = ['name']

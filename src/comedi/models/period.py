@@ -17,3 +17,4 @@ class Period(models.Model):
     app_label = 'comedi'
     verbose_name = _( 'period' )
     verbose_name_plural = _( 'periods' )
+    ordering = ['name']

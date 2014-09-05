@@ -12,6 +12,7 @@ class DepositMode( models.Model ):
   class Meta:
     app_label = 'comedi'
     verbose_name = _( 'deposit mode' )
+    ordering = ['name']
 
 
 class UsualComment( models.Model ):
@@ -25,6 +26,7 @@ class UsualComment( models.Model ):
     app_label = 'comedi'
     verbose_name = _( 'usual comment' )
     verbose_name_plural = _( 'usual comments' )
+    ordering = ['comment']
 
 
 
@@ -48,6 +50,7 @@ class Order( models.Model ):
     app_label = 'comedi'
     verbose_name = _( 'order' )
     verbose_name_plural = _( 'orders' )
+    ordering = ['code']
 
 class OrderItem( models.Model ):
 
@@ -65,6 +68,7 @@ class OrderItem( models.Model ):
     app_label = 'comedi'
     verbose_name = _( 'item' )
     verbose_name_plural = _( 'items' )
+    ordering = ['product']
 
 
   def __unicode__( self ):

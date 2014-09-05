@@ -29,6 +29,7 @@ class Client(models.Model):
     app_label = 'comedi'
     verbose_name = _( 'client' )
     verbose_name_plural = _( 'clients' )
+    ordering = ['last_name']
 
 
 class Seller( models.Model ):
@@ -42,3 +43,4 @@ class Seller( models.Model ):
     app_label = 'comedi'
     verbose_name = _( 'seller' )
     verbose_name_plural = _( 'sellers' )
+    ordering = ['name']
