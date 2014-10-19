@@ -29,7 +29,7 @@ admin.site.register( Product, ProductAdmin )
 
 
 
-class OrderItemInline( admin.StackedInline ):
+class OrderItemInline( admin.TabularInline ):
   model = OrderItem
   extra = 1
 

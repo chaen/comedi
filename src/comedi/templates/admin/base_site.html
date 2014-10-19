@@ -1,0 +1,11 @@
+{% extends "copy_admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
+
+{% block branding %}
+<a href="{% url 'comedi:index' %}"><h1 id="site-name">{% trans 'Comedi' %}</h1></a>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
