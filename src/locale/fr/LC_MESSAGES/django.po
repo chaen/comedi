@@ -59,6 +59,9 @@ msgstr ""
 msgid "client"
 msgstr ""
 
+msgid "clients"
+msgstr "clients"
+
 #: comedi/models/order.py:32 comedi/models/period.py:10
 #: comedi/models/person.py:15
 msgid "comment"
@@ -122,6 +125,9 @@ msgstr "produits"
 #: comedi/models/order.py:52
 msgid "unit"
 msgstr "unite"
+
+msgid "units"
+msgstr "unités"
 
 msgid "Unit"
 msgstr "Unite"
@@ -232,6 +238,9 @@ msgstr "Adresse"
 msgid "family"
 msgstr "famille"
 
+msgid "families"
+msgstr "familles"
+
 #: comedi/models/product.py:32 comedi/models/product.py:78
 msgid "rate"
 msgstr "taux"
@@ -243,6 +252,9 @@ msgstr "prix"
 #: comedi/models/product.py:59
 msgid "subFamily"
 msgstr "sous-famille"
+
+msgid "subFamilies"
+msgstr "sous-familles"
 
 #: comedi/models/product.py:62
 msgid "production unit"

@@ -1,3 +1,6 @@
+# -*- coding: utf8 -*-
+
+from __future__ import unicode_literals
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -18,10 +21,10 @@ class Client(models.Model):
   city = models.ForeignKey( City, verbose_name = _( 'city' ) )
   
   def __unicode__(self):
-    return "%s %s"%(self.first_name, self.last_name)
+    return "%s %s (%s %s)" % ( self.last_name, self.first_name, self.address, self.phone )
 
   def save( self, *args, **kwargs ):
-    complete_name = '%s %s' % ( self.first_name, self.last_name )
+    complete_name = '%s %s' % ( self.last_name, self.first_name )
     self.complete_name = complete_name
     super( Client, self ).save( *args, **kwargs )
     
@@ -30,6 +33,7 @@ class Client(models.Model):
     verbose_name = _( 'client' )
     verbose_name_plural = _( 'clients' )
     ordering = ['last_name']
+    unique_together = ( 'first_name', 'last_name', 'address', 'phone' )
 
 
 class Seller( models.Model ):

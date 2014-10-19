@@ -117,3 +117,10 @@ msgstr ""
 #: constance/templates/admin/constance/change_list.html:78
 msgid "Home"
 msgstr ""
+
+msgid "clients"
+msgstr "clients"
+
+msgid "families"
+msgstr "families"
+
